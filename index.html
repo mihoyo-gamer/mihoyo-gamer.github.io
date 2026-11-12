@@ -23,12 +23,12 @@
   <link rel="stylesheet" href="gallery-carousel.css?v=20261111-inline-autoplay">
   <script>try{const t=localStorage.getItem('gamer-theme');if(t)document.documentElement.dataset.theme=t;else if(matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.dataset.theme='dark';}catch(e){}</script>
   <script src="motion.js" defer></script>
-  <script src="data.js?v=20261113-story-long-r2" defer></script>
+  <script src="data.js?v=20261112-r2-videos" defer></script>
   <script src="local-media.js" defer></script>
-  <script src="recordings.js?v=20261111-five-types" defer></script>
+  <script src="recordings.js?v=20261112-r2-videos" defer></script>
   <script src="paper-data.js?v=20261110-paper-latest-gpt61" defer></script>
   <script src="showcase-data.js?v=20261110-language-review" defer></script>
-  <script src="bench-data.js?v=20261109-web-compact" defer></script>
+  <script src="bench-data.js?v=20261112-r2-videos" defer></script>
   <script src="video-playback.js?v=20261111-inline-autoplay" defer></script>
   <script src="main.js?v=20261112-local-story-restored" defer></script>
   <script src="research.js?v=20261111-rollout-video" defer></script>
@@ -79,7 +79,7 @@
         <a class="pill pill-code" href="https://github.com/RainBowLuoCS/Gamer" target="_blank" rel="noopener" aria-label="Code on GitHub (opens in a new tab)"><svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg><span>Code</span><span class="pill-ext" aria-hidden="true">↗</span></a>
       </div>
       <div class="hero-media overview-player hero-film" id="hero-media">
-        <video id="overview-video" src="videos/overview/gamer-film-2026-affiliations-v8-task-label.mp4?v=20261111-prompt-mascot" poster="assets/gamer-film-2026-affiliations-v8.jpg?v=20261111-prompt-mascot" muted loop playsinline controls preload="none" aria-label="Gamer project film: Star Rail gameplay, pre-training, instruction tuning, reinforcement learning, Streaming-vLLM serving, and game diversity"><track kind="chapters" src="videos/overview/gamer-project-film.vtt?v=20261106-mainstory-full" srclang="en" label="Film chapters"></video>
+        <video id="overview-video" src="https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/overview/gamer-film-2026-affiliations-v8-task-label.mp4?v=20261111-prompt-mascot" poster="assets/gamer-film-2026-affiliations-v8.jpg?v=20261111-prompt-mascot" muted loop playsinline controls preload="none" aria-label="Gamer project film: Star Rail gameplay, pre-training, instruction tuning, reinforcement learning, Streaming-vLLM serving, and game diversity"><track kind="chapters" src="videos/overview/gamer-project-film.vtt?v=20261106-mainstory-full" srclang="en" label="Film chapters"></video>
       </div>
     </div>
   </section>
@@ -186,7 +186,7 @@
 <section class="section" id="rl"><div class="wrap narrow">
 <p class="eyebrow">Stage III RL</p><h2>Online policy optimization with TA-GRPO</h2>
 <p class="lead">Temporal-Aware GRPO optimizes memory-linked rollout segments using environment-verified rewards, without a value critic or learned reward model. Streaming-vLLM serves parallel rollouts under the real-time execution protocol.</p>
-<figure class="video-figure rollout-progress-video"><video id="rollout-progress-video" controls muted loop playsinline preload="none" poster="assets/rl-rollout-mean.jpg?v=20261111-rollout-video" aria-label="Mean reward across eight navigation tasks: real-time rollout versus low-FPS control"><source src="videos/rl-rollout-mean.mp4?v=20261111-rollout-video" type="video/mp4"></video></figure>
+<figure class="video-figure rollout-progress-video"><video id="rollout-progress-video" controls muted loop playsinline preload="none" poster="assets/rl-rollout-mean.jpg?v=20261111-rollout-video" aria-label="Mean reward across eight navigation tasks: real-time rollout versus low-FPS control"><source src="https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/rl-rollout-mean.mp4?v=20261111-rollout-video" type="video/mp4"></video></figure>
 <div class="gallery-controls"><span class="control-label">Rollout case</span><div class="segmented" role="group" aria-label="RL rollout case"><button type="button" data-rollout="training" aria-pressed="true">Reach Pom-Pom · training</button><button type="button" data-rollout="development" aria-pressed="false">Reach March 7th · testing</button></div></div>
 <figure class="paper-figure rollout-figure">
   <div class="rollout-figure-toolbar">
@@ -201,7 +201,7 @@
   </div>
   <figcaption id="rollout-caption"></figcaption>
 </figure>
-<div class="research-subsection"><p class="eyebrow">Real-time feedback during training</p><h3>Faster rollouts, better learning</h3><p class="body-copy">Across all eight navigation tasks, real-time rollouts achieve higher final rewards than the 0.6-FPS baseline under the same training-step budget.</p><figure class="video-figure"><video id="rl-video" controls muted loop playsinline preload="none" poster="assets/rl-reward-poster.jpg?v=20261110-reward-new" aria-label="RL reward comparison: real-time rollout versus low-FPS control"><source src="videos/rl_reward.mp4?v=20261110-reward-new" type="video/mp4"></video></figure></div>
+<div class="research-subsection"><p class="eyebrow">Real-time feedback during training</p><h3>Faster rollouts, better learning</h3><p class="body-copy">Across all eight navigation tasks, real-time rollouts achieve higher final rewards than the 0.6-FPS baseline under the same training-step budget.</p><figure class="video-figure"><video id="rl-video" controls muted loop playsinline preload="none" poster="assets/rl-reward-poster.jpg?v=20261110-reward-new" aria-label="RL reward comparison: real-time rollout versus low-FPS control"><source src="https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/rl_reward.mp4?v=20261110-reward-new" type="video/mp4"></video></figure></div>
 <div class="research-subsection" id="minigame-results"><p class="eyebrow">Generalization across puzzle types</p><h3>Seven puzzle types. Forty held-out tasks.</h3><p class="body-copy">Gamer-RL achieves a 49.7% macro-average success rate across seven puzzle types, improving on Gamer-SFT’s 39.2% by 10.5 percentage points. Both models successfully solve tasks in every type, while the strongest general-purpose baseline reaches 17.1%. The macro-average weights all seven puzzle types equally.</p><div class="result-callouts"><div><strong>49.7%</strong><span>Gamer-RL macro-average</span></div><div><strong>17.1%</strong><span>GPT-6.1-Sol macro-average</span></div><div><strong>7 / 7</strong><span>types with non-zero success</span></div></div>
 <div class="comparison-toolbar"><h3 id="minigame-result-heading">Seven-type macro-average</h3><label>Metric <select id="minigame-result-select" aria-label="Minigame result metric"></select></label></div><div id="minigame-result-chart" class="research-chart" aria-live="polite"></div>
 <details class="figure-details" open><summary>All minigame scores <span class="disclosure-indicator" aria-hidden="true"><svg viewBox="0 0 16 10" focusable="false"><path d="M1 1h14L8 9z" fill="currentColor"/></svg></span></summary><div id="minigame-result-table" class="table-scroll detail-table"></div></details></div>

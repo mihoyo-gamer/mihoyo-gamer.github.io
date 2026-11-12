@@ -11,7 +11,7 @@ window.GAMER.recordings = [
     "ability": "Logic",
     "skill": "Logical reasoning",
     "duration": 4.34,
-    "src": "videos/minigames/magflow-01.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/magflow-01.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/magflow-01.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Magflow Link. The recording includes the original task, Think excerpts, and executed keyboard–mouse actions."
   },
@@ -26,7 +26,7 @@ window.GAMER.recordings = [
     "ability": "Logic",
     "skill": "Logical reasoning",
     "duration": 4.25,
-    "src": "videos/minigames/magflow-02.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/magflow-02.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/magflow-02.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Magflow Link. The recording includes the original task, Think excerpts, and executed keyboard–mouse actions."
   },
@@ -41,7 +41,7 @@ window.GAMER.recordings = [
     "ability": "Logic",
     "skill": "Logical reasoning",
     "duration": 50.71,
-    "src": "videos/minigames/magflow-03.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/magflow-03.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/magflow-03.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Magflow Link. The recording includes the original task, Think excerpts, and executed keyboard–mouse actions."
   },
@@ -56,7 +56,7 @@ window.GAMER.recordings = [
     "ability": "Logic",
     "skill": "Logical reasoning",
     "duration": 38.333333,
-    "src": "videos/minigames/magflow-04.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/magflow-04.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/magflow-04.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Magflow Link. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   },
@@ -71,7 +71,7 @@ window.GAMER.recordings = [
     "ability": "Planning",
     "skill": "Temporal planning",
     "duration": 5.0,
-    "src": "videos/minigames/scapegoat-04.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/scapegoat-04.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/scapegoat-04.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Golden Scapegoat. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   },
@@ -86,7 +86,7 @@ window.GAMER.recordings = [
     "ability": "Planning",
     "skill": "Temporal planning",
     "duration": 14.3,
-    "src": "videos/minigames/scapegoat-05.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/scapegoat-05.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/scapegoat-05.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Golden Scapegoat. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   },
@@ -101,7 +101,7 @@ window.GAMER.recordings = [
     "ability": "Planning",
     "skill": "Temporal planning",
     "duration": 66.57,
-    "src": "videos/minigames/scapegoat-06.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/scapegoat-06.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/scapegoat-06.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Golden Scapegoat. The recording includes the original task, Think excerpts, and executed keyboard–mouse actions."
   },
@@ -116,7 +116,7 @@ window.GAMER.recordings = [
     "ability": "Planning",
     "skill": "Temporal planning",
     "duration": 27.82,
-    "src": "videos/minigames/scapegoat-07.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/scapegoat-07.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/scapegoat-07.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Golden Scapegoat. The recording includes the original task, Think excerpts, and executed keyboard–mouse actions."
   },
@@ -131,7 +131,7 @@ window.GAMER.recordings = [
     "ability": "Planning",
     "skill": "Temporal planning",
     "duration": 57.47,
-    "src": "videos/minigames/scapegoat-08.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/scapegoat-08.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/scapegoat-08.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Golden Scapegoat. The recording includes the original task, Think excerpts, and executed keyboard–mouse actions."
   },
@@ -146,7 +146,7 @@ window.GAMER.recordings = [
     "ability": "Planning",
     "skill": "Temporal planning",
     "duration": 17.7,
-    "src": "videos/minigames/scapegoat-09.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/scapegoat-09.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/scapegoat-09.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Golden Scapegoat. The recording includes the original task, Think excerpts, and executed keyboard–mouse actions."
   },
@@ -161,7 +161,7 @@ window.GAMER.recordings = [
     "ability": "Timing & control",
     "skill": "Timing & control",
     "duration": 93.0,
-    "src": "videos/minigames/maze-11.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/maze-11.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/maze-11.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Janus’ Maze. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   },
@@ -176,7 +176,7 @@ window.GAMER.recordings = [
     "ability": "Timing & control",
     "skill": "Timing & control",
     "duration": 99.01,
-    "src": "videos/minigames/maze-12.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/maze-12.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/maze-12.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Janus’ Maze. The recording includes the original task, Think excerpts, and executed keyboard–mouse actions."
   },
@@ -191,7 +191,7 @@ window.GAMER.recordings = [
     "ability": "Timing & control",
     "skill": "Timing & control",
     "duration": 18.25,
-    "src": "videos/minigames/maze-13.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/maze-13.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/maze-13.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Janus’ Maze. The recording includes the original task, Think excerpts, and executed keyboard–mouse actions."
   },
@@ -206,7 +206,7 @@ window.GAMER.recordings = [
     "ability": "Timing & control",
     "skill": "Timing & control",
     "duration": 14.2,
-    "src": "videos/minigames/maze-14.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/maze-14.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/maze-14.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Janus’ Maze. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   },
@@ -221,7 +221,7 @@ window.GAMER.recordings = [
     "ability": "Timing & control",
     "skill": "Timing & control",
     "duration": 13.8,
-    "src": "videos/minigames/maze-15.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/maze-15.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/maze-15.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Janus’ Maze. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   },
@@ -236,7 +236,7 @@ window.GAMER.recordings = [
     "ability": "Timing & control",
     "skill": "Timing & control",
     "duration": 10.2,
-    "src": "videos/minigames/maze-16.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/maze-16.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/maze-16.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Janus’ Maze. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   },
@@ -251,7 +251,7 @@ window.GAMER.recordings = [
     "ability": "Spatial",
     "skill": "Spatial reasoning",
     "duration": 9.1,
-    "src": "videos/minigames/passage-18.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/passage-18.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/passage-18.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Janus’s Hidden Passage. The recording includes the original task, Think excerpts, and executed keyboard–mouse actions."
   },
@@ -266,7 +266,7 @@ window.GAMER.recordings = [
     "ability": "Spatial",
     "skill": "Spatial reasoning",
     "duration": 10.45,
-    "src": "videos/minigames/passage-19.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/passage-19.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/passage-19.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Janus’s Hidden Passage. The recording includes the original task, Think excerpts, and executed keyboard–mouse actions."
   },
@@ -281,7 +281,7 @@ window.GAMER.recordings = [
     "ability": "Spatial",
     "skill": "Spatial reasoning",
     "duration": 10.36,
-    "src": "videos/minigames/passage-20.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/passage-20.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/passage-20.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Janus’s Hidden Passage. The recording includes the original task, Think excerpts, and executed keyboard–mouse actions."
   },
@@ -296,7 +296,7 @@ window.GAMER.recordings = [
     "ability": "Spatial",
     "skill": "Spatial reasoning",
     "duration": 10.61,
-    "src": "videos/minigames/passage-21.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/passage-21.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/passage-21.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Janus’s Hidden Passage. The recording includes the original task, Think excerpts, and executed keyboard–mouse actions."
   },
@@ -311,7 +311,7 @@ window.GAMER.recordings = [
     "ability": "Spatial",
     "skill": "Spatial reasoning",
     "duration": 26.733333,
-    "src": "videos/minigames/passage-22.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/passage-22.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/passage-22.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Janus’s Hidden Passage. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   },
@@ -326,7 +326,7 @@ window.GAMER.recordings = [
     "ability": "Spatial",
     "skill": "Spatial reasoning",
     "duration": 27.45,
-    "src": "videos/minigames/passage-23.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/passage-23.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/passage-23.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Janus’s Hidden Passage. The recording includes the original task, Think excerpts, and executed keyboard–mouse actions."
   },
@@ -341,7 +341,7 @@ window.GAMER.recordings = [
     "ability": "Logic",
     "skill": "Logical reasoning",
     "duration": 13.0,
-    "src": "videos/minigames/compass-24.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/compass-24.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/compass-24.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Navigation Compass. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   },
@@ -356,7 +356,7 @@ window.GAMER.recordings = [
     "ability": "Logic",
     "skill": "Logical reasoning",
     "duration": 21.1,
-    "src": "videos/minigames/compass-25.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/compass-25.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/compass-25.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Navigation Compass. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   },
@@ -371,7 +371,7 @@ window.GAMER.recordings = [
     "ability": "Logic",
     "skill": "Logical reasoning",
     "duration": 11.233333,
-    "src": "videos/minigames/compass-26.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/compass-26.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/compass-26.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Navigation Compass. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   },
@@ -386,7 +386,7 @@ window.GAMER.recordings = [
     "ability": "Logic",
     "skill": "Logical reasoning",
     "duration": 14.533333,
-    "src": "videos/minigames/compass-27.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/compass-27.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/compass-27.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Navigation Compass. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   },
@@ -401,7 +401,7 @@ window.GAMER.recordings = [
     "ability": "Logic",
     "skill": "Logical reasoning",
     "duration": 13.133333,
-    "src": "videos/minigames/compass-28.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/compass-28.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/compass-28.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Navigation Compass. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   },
@@ -416,7 +416,7 @@ window.GAMER.recordings = [
     "ability": "Logic",
     "skill": "Logical reasoning",
     "duration": 14.533333,
-    "src": "videos/minigames/compass-29.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/compass-29.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/compass-29.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Navigation Compass. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   },
@@ -431,7 +431,7 @@ window.GAMER.recordings = [
     "ability": "Logic",
     "skill": "Logical reasoning",
     "duration": 22.566667,
-    "src": "videos/minigames/compass-30.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/compass-30.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/compass-30.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Navigation Compass. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   },
@@ -446,7 +446,7 @@ window.GAMER.recordings = [
     "ability": "Logic",
     "skill": "Logical reasoning",
     "duration": 24.433333,
-    "src": "videos/minigames/compass-31.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/compass-31.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/compass-31.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Navigation Compass. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   },
@@ -461,7 +461,7 @@ window.GAMER.recordings = [
     "ability": "Logic",
     "skill": "Logical reasoning",
     "duration": 17.666667,
-    "src": "videos/minigames/compass-32.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/compass-32.mp4?v=20261111-prompt-hidden",
     "poster": "assets/recordings/compass-32.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Navigation Compass. The recording includes the task and executed keyboard–mouse actions, with Think excerpts where available."
   }

@@ -10,7 +10,7 @@ window.GAMER.benchVideos = {
    "game": "Kill Slime",
    "model": "Gamer-8B-CPT",
    "rt": {
-    "src": "videos/bench/mcu-kill-slime-rt.mp4?v=20261109-web-compact",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/mcu-kill-slime-rt.mp4?v=20261109-web-compact",
     "success": true,
     "mean": 0.8,
     "wins": 4,
@@ -18,7 +18,7 @@ window.GAMER.benchVideos = {
     "duration": 71.45
    },
    "tp": {
-    "src": "videos/bench/mcu-kill-slime-tp.mp4?v=20261109-web-compact",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/mcu-kill-slime-tp.mp4?v=20261109-web-compact",
     "success": false,
     "mean": 0.6,
     "wins": 3,
@@ -36,7 +36,7 @@ window.GAMER.benchVideos = {
    "game": "Craft Paper",
    "model": "Gamer-35B-A3B-CPT",
    "rt": {
-    "src": "videos/bench/mcu-craft-paper-rt.mp4?v=20261109-redacted",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/mcu-craft-paper-rt.mp4?v=20261109-redacted",
     "success": true,
     "mean": 0.8,
     "wins": 4,
@@ -44,7 +44,7 @@ window.GAMER.benchVideos = {
     "duration": 30.2
    },
    "tp": {
-    "src": "videos/bench/mcu-craft-paper-tp.mp4?v=20261109-redacted",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/mcu-craft-paper-tp.mp4?v=20261109-redacted",
     "success": false,
     "mean": 0.4,
     "wins": 2,
@@ -64,7 +64,7 @@ window.GAMER.benchVideos = {
    "game": "Defend the Center",
    "model": "Gamer-8B-CPT",
    "rt": {
-    "src": "videos/bench/vizdoom-defend-the-center-rt.mp4?v=20261109-web-compact",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/vizdoom-defend-the-center-rt.mp4?v=20261109-web-compact",
     "score": 12.0,
     "mean": 11.4,
     "runs": 10,
@@ -72,7 +72,7 @@ window.GAMER.benchVideos = {
     "duration": 7.13
    },
    "tp": {
-    "src": "videos/bench/vizdoom-defend-the-center-tp.mp4?v=20261109-web-compact",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/vizdoom-defend-the-center-tp.mp4?v=20261109-web-compact",
     "score": 14.0,
     "mean": 13.6,
     "runs": 10,
@@ -84,7 +84,7 @@ window.GAMER.benchVideos = {
    "game": "Defend the Line",
    "model": "Gamer-35B-A3B-CPT",
    "rt": {
-    "src": "videos/bench/vizdoom-defend-the-line-rt.mp4?v=20261109-web-compact",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/vizdoom-defend-the-line-rt.mp4?v=20261109-web-compact",
     "score": 29.0,
     "mean": 29.3,
     "runs": 10,
@@ -92,7 +92,7 @@ window.GAMER.benchVideos = {
     "duration": 7.43
    },
    "tp": {
-    "src": "videos/bench/vizdoom-defend-the-line-tp.mp4?v=20261109-web-compact",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/vizdoom-defend-the-line-tp.mp4?v=20261109-web-compact",
     "score": 23.0,
     "mean": 21.6,
     "runs": 10,
@@ -106,7 +106,7 @@ window.GAMER.benchVideos = {
    "game": "Monster Shoot",
    "model": "Gamer-8B-CPT",
    "rt": {
-    "src": "videos/bench/oga-monster-shoot-rt.mp4?v=20261109-web-compact",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/oga-monster-shoot-rt.mp4?v=20261109-web-compact",
     "score": 0.72,
     "mean": 0.758,
     "runs": 10,
@@ -114,7 +114,7 @@ window.GAMER.benchVideos = {
     "duration": 9.2
    },
    "tp": {
-    "src": "videos/bench/oga-monster-shoot-tp.mp4?v=20261109-web-compact",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/oga-monster-shoot-tp.mp4?v=20261109-web-compact",
     "score": 0.54,
     "mean": 0.518,
     "runs": 10,
@@ -138,7 +138,7 @@ window.GAMER.benchVideos = {
     720
    ],
    "rt": {
-    "src": "videos/bench/oga-scene-escape-rt.mp4?v=20261109-web-compact",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/oga-scene-escape-rt.mp4?v=20261109-web-compact",
     "score": 0.4,
     "mean": 0.25,
     "runs": 10,
@@ -146,7 +146,7 @@ window.GAMER.benchVideos = {
     "duration": 17.73
    },
    "tp": {
-    "src": "videos/bench/oga-scene-escape-tp.mp4?v=20261109-web-compact",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/oga-scene-escape-tp.mp4?v=20261109-web-compact",
     "score": 0.2,
     "mean": 0.16,
     "runs": 10,
@@ -160,7 +160,7 @@ window.GAMER.benchVideos = {
    "game": "Hextris",
    "model": "Gamer-8B-CPT",
    "rt": {
-    "src": "videos/bench/gameworld-hextris-rt.mp4?v=20261109-redacted",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/gameworld-hextris-rt.mp4?v=20261109-redacted",
     "score": 0.588,
     "mean": 0.568,
     "runs": 5,
@@ -168,7 +168,7 @@ window.GAMER.benchVideos = {
     "duration": 16.67
    },
    "tp": {
-    "src": "videos/bench/gameworld-hextris-tp.mp4?v=20261109-redacted",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/gameworld-hextris-tp.mp4?v=20261109-redacted",
     "score": 0.192,
     "mean": 0.238,
     "runs": 5,
@@ -186,7 +186,7 @@ window.GAMER.benchVideos = {
    "game": "Edge Surf",
    "model": "Gamer-35B-A3B-CPT",
    "rt": {
-    "src": "videos/bench/gameworld-edge-surf-rt.mp4?v=20261109-redacted",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/gameworld-edge-surf-rt.mp4?v=20261109-redacted",
     "score": 1.0,
     "mean": 0.776,
     "runs": 5,
@@ -194,7 +194,7 @@ window.GAMER.benchVideos = {
     "duration": 3.83
    },
    "tp": {
-    "src": "videos/bench/gameworld-edge-surf-tp.mp4?v=20261109-redacted",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/gameworld-edge-surf-tp.mp4?v=20261109-redacted",
     "score": 0.40625,
     "mean": 0.577,
     "runs": 5,
