@@ -87,4 +87,4 @@ window.GAMER.mainStory.chapters = [
 ];
 
 // Long gameplay stays on its original drive in the LAN preview.
-window.GAMER.mainStory.longVideo = {"id": "story-long", "src": "", "localSrc": "videos/main-story/story-long.mp4?v=20261111-prompt-hidden", "poster": "assets/main-story/story-long.jpg?v=20261111-prompt-hidden", "duration": 1731.212993, "playbackRate": 1};
+window.GAMER.mainStory.longVideo = {"id": "story-long", "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/story-long.mp4", "localSrc": "videos/main-story/story-long.mp4?v=20261111-prompt-hidden", "poster": "assets/main-story/story-long.jpg?v=20261111-prompt-hidden", "duration": 1731.212993, "playbackRate": 1};
