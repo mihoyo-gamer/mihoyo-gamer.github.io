@@ -1,0 +1,53 @@
+/* Multi-level task supervision: animated, full-width rebuild of paper Fig. 7. */
+.df-anim{margin:26px 0 10px;border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px}
+.df-steps{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.df-steps button{border:1px solid var(--line);background:var(--surface);color:var(--secondary);border-radius:999px;padding:7px 14px;font-size:12px;font-weight:600;transition:background .25s,color .25s,border-color .25s}
+.df-steps button b{margin-right:6px;font-size:10px;color:var(--muted)}
+.df-steps button[aria-pressed=true]{background:var(--ours);border-color:var(--ours);color:#fff}.df-steps button[aria-pressed=true] b{color:#c8d3ff}
+.df-steps .df-play{margin-left:auto;color:var(--ours)}
+.df-caption{margin:14px 0 18px;font-size:14px;color:var(--ink);min-height:22px;font-weight:500}
+.df-stage{display:grid;grid-template-columns:240px 1fr;gap:20px;align-items:start}
+.df-source{position:sticky;top:80px;border:1px solid var(--line);border-radius:12px;background:var(--alt);padding:12px;display:grid;gap:8px}
+.df-source img{width:100%;border-radius:8px}
+.df-label{font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--muted)}
+.df-timeline{position:relative;height:18px;border-radius:9px;background:var(--surface);border:1px solid var(--line);overflow:hidden}
+.df-tick{position:absolute;top:3px;bottom:3px;width:4px;margin-left:-2px;border-radius:2px;background:var(--sft);opacity:.25;transition:opacity .3s}
+.df-anim[data-step] .df-tick{opacity:1}
+.df-timeline.df-scan .df-tick{animation:tickIn .3s var(--ease) both;animation-delay:calc(.15s + var(--i) * .12s)}
+@keyframes tickIn{from{opacity:.15;transform:scaleY(.3)}}
+.df-playhead{position:absolute;top:0;bottom:0;left:0;width:2px;background:var(--ours);box-shadow:0 0 8px var(--ours);transition:left 1s linear}
+.df-rows{display:grid;gap:12px}
+.df-row{display:grid;grid-template-columns:34px repeat(6,minmax(0,1fr));gap:8px;align-items:stretch}
+.df-row-tag{display:grid;place-items:center;border-radius:8px;font-size:12px;font-weight:800;color:#fff}
+.df-l1 .df-row-tag{background:var(--sft)}.df-l2 .df-row-tag{background:#3fa88f}.df-l3 .df-row-tag{background:#d0607a}
+.df-clip,.df-goal,.df-task{border-radius:10px;border:1px solid var(--line);background:var(--surface);padding:8px;display:grid;gap:6px;align-content:start;transition:opacity .5s var(--ease),transform .6s var(--ease),border-color .3s,box-shadow .3s}
+.df-clip img{width:100%;border-radius:6px;aspect-ratio:16/9;object-fit:cover}
+.df-time{font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums}
+.df-op{margin:0;font-size:12px;line-height:1.45;color:var(--ink);font-weight:600;transition:opacity .4s ease}
+.df-goal{background:#3fa88f12;border-color:#3fa88f55}.df-goal p,.df-task p{margin:0;font-size:13px;line-height:1.55;color:var(--ink)}
+.df-task{background:#d0607a10;border-color:#d0607a55}
+/* Step states: rows appear in order; earlier rows stay but dim slightly. */
+.df-l1,.df-l2,.df-l3{transition:opacity .4s}
+.df-anim[data-step="0"] .df-op{opacity:0}
+.df-anim[data-step="0"] .df-clip{border-color:var(--sft);box-shadow:0 0 0 2px #7c5cd622}
+.df-anim[data-step="0"] .df-l2,.df-anim[data-step="0"] .df-l3,.df-anim[data-step="1"] .df-l2,.df-anim[data-step="1"] .df-l3,.df-anim[data-step="2"] .df-l3{opacity:0;pointer-events:none}
+.df-anim[data-step="0"] .df-clip{animation:clipIn .4s var(--ease) both;animation-delay:calc(.15s + var(--i) * .12s)}
+.df-anim[data-step="1"] .df-op{animation:mediaIn .35s var(--ease) both;animation-delay:calc(var(--i) * .09s)}
+.df-anim[data-step="2"] .df-goal{animation:mergeIn .5s var(--ease) both;animation-delay:calc(.1s + var(--i) * .2s)}
+.df-anim[data-step="2"] .df-clip{opacity:.7}
+.df-anim[data-step="3"] .df-task{animation:mergeIn .55s var(--ease) both .1s}
+.df-anim[data-step="3"] .df-clip{opacity:.55}.df-anim[data-step="3"] .df-goal{opacity:.75}
+@keyframes clipIn{from{opacity:0;transform:translateY(12px) scale(.96)}}
+@keyframes mergeIn{from{opacity:0;transform:scaleX(.6) translateY(-10px)}}
+.df-foot{margin:16px 0 0;font-size:11.5px;color:var(--muted);line-height:1.6}
+html[data-theme=dark] .df-goal{background:#3fa88f18}html[data-theme=dark] .df-task{background:#d0607a16}
+@media(max-width:900px){.df-stage{grid-template-columns:1fr}.df-source{position:static;max-width:320px}.df-row{grid-template-columns:28px repeat(3,minmax(0,1fr))}.df-goal,.df-task{grid-column:2 / -1!important}}
+@media(max-width:520px){.df-row{grid-template-columns:24px repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.df-anim *{animation:none!important}}
+
+/* Sample totals sit alongside the explanation of the selected annotation level. */
+#memory .df-caption-row{display:flex;align-items:center;gap:24px;margin:24px 0 28px}
+#memory .df-caption-row .df-caption{flex:1;min-width:0;margin:0}
+#memory .df-count{flex:0 0 auto;margin:0;padding:8px 14px;border:1px solid var(--line);border-radius:10px;background:var(--ours-soft);color:var(--blue);font-size:20px;font-weight:650;line-height:1.5;white-space:nowrap;font-variant-numeric:tabular-nums}
+#memory .df-count[hidden]{display:none}
+@media(max-width:800px){#memory .df-caption-row{align-items:flex-start;flex-direction:column;gap:12px}#memory .df-count{font-size:18px;padding:6px 12px}}

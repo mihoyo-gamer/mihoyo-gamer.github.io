@@ -1,0 +1,4 @@
+# Local preview only; not part of the published site.
+preview.py
+__pycache__/
+.claude/

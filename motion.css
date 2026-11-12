@@ -1,0 +1,779 @@
+/* Motion and visual polish layer. Loaded last so it can refine the component styles. */
+:root{--ease:cubic-bezier(.2,.8,.2,1);--ease-spring:cubic-bezier(.34,1.4,.64,1);--shadow-soft:0 1px 2px #14161a08,0 8px 28px #14161a0d;--shadow-lift:0 2px 6px #14161a0d,0 18px 44px #14161a1c}
+
+/* ---------- Sliding indicators ---------- */
+.has-ind{position:relative;isolation:isolate}
+.seg-ind{position:absolute;left:0;top:0;z-index:0;border-radius:999px;background:#fff;box-shadow:0 1px 3px #14161a1f,0 4px 14px #14161a12;pointer-events:none;opacity:0;transition:transform .5s var(--ease),width .5s var(--ease),height .5s var(--ease),opacity .25s}
+.segmented.has-ind>button{position:relative;z-index:1;transition:color .3s,transform .15s}
+.segmented.has-ind>button[aria-pressed=true]{background:transparent!important;box-shadow:none!important;color:var(--ink)}
+.segmented.has-ind>button:active{transform:scale(.96)}
+html[data-theme=dark] .seg-ind{background:#2a3247;box-shadow:0 1px 3px #0006}
+/* Chip filters: a filled pill glides between mechanics. */
+.showcase-filters.has-ind>button{background:transparent;transition:color .3s,border-color .3s,transform .15s}
+.showcase-filters.has-ind>button:hover{border-color:#abb9f6;color:var(--ink)}
+.showcase-filters.has-ind>button[aria-pressed=true]{color:#fff!important;border-color:transparent!important}
+.seg-ind.chip{background:linear-gradient(120deg,#5b7cff,var(--ours));box-shadow:0 6px 18px #3b5bdb40}
+html[data-theme=dark] .seg-ind.chip{background:linear-gradient(120deg,#5b7cff,var(--ours))}
+html[data-theme=dark] .showcase-filters.has-ind>button{background:transparent}
+/* Film chapters: a glowing rule slides along the top edge. */
+.seg-ind.bar{height:2px!important;border-radius:2px;background:#87dcd8;box-shadow:0 0 14px #87dcd8b0}
+.film-chapters.has-ind button[aria-pressed=true]{border-top-color:transparent}
+/* Navigation: the current-section pill follows the scroll position. */
+.seg-ind.nav{background:var(--ours-soft);box-shadow:none}
+.nav nav.has-ind a{position:relative;z-index:1;transition:color .3s}
+.nav nav.has-ind a.current{background:transparent}
+html[data-theme=dark] .seg-ind.nav{background:var(--ours-soft);box-shadow:none}
+
+/* ---------- Scroll reveals ---------- */
+.m-reveal{opacity:0;transform:translateY(24px)}
+.m-reveal.m-in{opacity:1;transform:none;transition:opacity .8s ease,transform .9s var(--ease)}
+.m-stagger>*{opacity:0;transform:translateY(18px)}
+.m-stagger.m-in>*{opacity:1;transform:none;transition:opacity .6s ease calc(var(--i,0)*85ms),transform .75s var(--ease) calc(var(--i,0)*85ms)}
+.reveal{transition:opacity .8s ease,transform .9s var(--ease)}
+
+/* ---------- Hero ---------- */
+.gradient-title{background-size:220% auto;animation:titleShine 9s ease-in-out infinite alternate}
+@keyframes titleShine{from{background-position:0% 50%}to{background-position:100% 50%}}
+.game-wall{animation:wallDrift 46s ease-in-out infinite alternate}
+@keyframes wallDrift{from{transform:scale(1.04)}to{transform:scale(1.13) translate(-1.6%,-1.2%)}}
+.hero-content>*{animation:heroIn 1s var(--ease) both}
+.hero-content>:nth-child(2){animation-delay:.1s}.hero-content>:nth-child(3){animation-delay:.2s}.hero-content>:nth-child(4){animation-delay:.3s}.hero-content>:nth-child(5){animation-delay:.42s}
+@keyframes heroIn{from{opacity:0;transform:translateY(26px)}}
+.pill{transition:transform .3s var(--ease),box-shadow .3s,background .2s}
+.pill:not(.unavailable):hover{transform:translateY(-2px);box-shadow:0 10px 24px #0005}
+.pill:not(.unavailable):active{transform:translateY(0) scale(.97)}
+.pill-accent{position:relative;overflow:hidden}
+.pill-accent::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,#ffffffb0 50%,transparent 70%);transform:translateX(-120%);animation:pillShine 4.5s ease-in-out 1.6s infinite}
+@keyframes pillShine{0%,62%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.marquee-item{transition:background .25s,border-color .25s,transform .25s}
+.marquee-item:hover{background:#ffffff1f;border-color:#ffffff55;transform:translateY(-2px)}
+.game-marquee:hover .marquee-track{animation-play-state:paused}
+.film-now i{animation:livePulse 1.8s ease-in-out infinite}
+@keyframes livePulse{0%,100%{box-shadow:0 0 0 0 #82dad480}50%{box-shadow:0 0 0 6px #82dad400}}
+
+/* ---------- Section rhythm ---------- */
+.chapter-marker i{background:linear-gradient(90deg,var(--ours),transparent)}
+.section.alt{background:radial-gradient(1200px 380px at 12% 0%,#3b5bdb0a,transparent 70%),var(--alt)}
+html[data-theme=dark] .section.alt{background:radial-gradient(1200px 380px at 12% 0%,#5b7cff12,transparent 70%),var(--alt)}
+
+/* ---------- Cards and panels ---------- */
+.video-card{transition:transform .4s var(--ease),box-shadow .4s,border-color .3s}
+.video-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+.video-poster img{transition:filter .3s,transform .8s var(--ease)}
+.video-card button:hover .video-poster img{transform:scale(1.05);filter:brightness(.82)}
+.play-icon{transition:transform .35s var(--ease-spring),background .25s}
+.video-card button:hover .play-icon{transform:translate(-50%,-50%) scale(1.14);background:var(--ours)}
+.pipeline a{transition:background .25s,transform .35s var(--ease)}
+.pipeline a::before{transform-origin:left;transition:transform .5s var(--ease)}
+.pipeline a:hover::before{transform:scaleY(1.6)}
+.pipeline a:hover h3{color:var(--stage-color)}
+.cpt-trick,.ladder-panel,.quest-card,.pause-run,.sl-explorer,.action-demo,.latency-panel,.streaming-metric,.research-chart,.engine-table,.comparison-panel{transition:box-shadow .4s,border-color .3s}
+.cpt-trick:hover,.ladder-panel:hover,.quest-card:hover,.latency-panel:hover,.streaming-metric:hover{box-shadow:var(--shadow-soft);border-color:#cfd8f4}
+html[data-theme=dark] .cpt-trick:hover,html[data-theme=dark] .ladder-panel:hover,html[data-theme=dark] .quest-card:hover,html[data-theme=dark] .latency-panel:hover,html[data-theme=dark] .streaming-metric:hover{border-color:#34406a}
+.data-metrics>div,.infra-metrics>div,.hierarchy-cards article,.result-callouts>div,.infra-flow article,.resource-card{transition:transform .35s var(--ease),box-shadow .35s,border-color .3s}
+.hierarchy-cards article:hover,.infra-flow article:hover,.resource-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-soft)}
+.counting{font-variant-numeric:tabular-nums}
+/* Flow diagrams: the arrows pulse in sequence to show the direction of data. */
+.infra-flow>i,.memory-flow i{animation:arrowFlow 2.4s ease-in-out infinite}
+.infra-flow>i:nth-of-type(2),.memory-flow i:nth-of-type(2){animation-delay:.4s}
+.memory-flow i:nth-of-type(3){animation-delay:.8s}
+@keyframes arrowFlow{0%,100%{opacity:.35}45%{opacity:1;color:var(--ours)}}
+.memory-flow span{transition:background .35s,color .35s,box-shadow .35s}
+.memory-flow.flow-run>span{animation:flowStep .9s var(--ease) both}
+.memory-flow.flow-run>span:nth-of-type(2){animation-delay:.12s}.memory-flow.flow-run>span:nth-of-type(3){animation-delay:.24s}.memory-flow.flow-run>span:nth-of-type(4){animation-delay:.36s}
+@keyframes flowStep{0%{transform:none}35%{transform:translateY(-4px);box-shadow:0 8px 20px #3b5bdb30}100%{transform:none}}
+.mechanism-copy{transition:min-height .3s}
+/* Key remapping: the two rebound keys trade places on a loop. */
+.remap .keys:last-of-type .key.rebound:nth-child(1){animation:swapRight 4.8s var(--ease) infinite}
+.remap .keys:last-of-type .key.rebound:nth-child(2){animation:swapLeft 4.8s var(--ease) infinite}
+@keyframes swapRight{0%,30%{transform:translateX(calc(100% + 6px));background:var(--surface);color:var(--secondary);border-color:var(--line)}45%,85%{transform:none}100%{transform:translateX(calc(100% + 6px));background:var(--surface);color:var(--secondary);border-color:var(--line)}}
+@keyframes swapLeft{0%,30%{transform:translateX(calc(-100% - 6px));background:var(--surface);color:var(--secondary);border-color:var(--line)}45%,85%{transform:none}100%{transform:translateX(calc(-100% - 6px));background:var(--surface);color:var(--secondary);border-color:var(--line)}}
+.remap .arrow{animation:arrowFlow 4.8s ease-in-out infinite}
+/* Remap demo: same plan, new bindings per trajectory. */
+.cpt-trick{display:flex;flex-direction:column}
+.remap-demo{margin-top:18px;padding:14px;border-radius:12px;background:var(--alt);border:1px solid var(--line);display:grid;gap:12px;flex:1}
+.rd-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.rd-traj{font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--cpt)}
+.rd-spec{display:flex;gap:6px;flex-wrap:wrap;flex:1}
+.rd-spec.rd-pop .rd-bind{animation:mediaIn .45s var(--ease) both}.rd-spec.rd-pop .rd-bind:nth-child(2){animation-delay:.05s}.rd-spec.rd-pop .rd-bind:nth-child(3){animation-delay:.1s}.rd-spec.rd-pop .rd-bind:nth-child(4){animation-delay:.15s}
+.rd-bind{font-size:11px;color:var(--secondary);background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:2px 9px}.rd-bind b{color:var(--cpt)}
+.rd-stage{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
+.rd-track{position:relative;height:110px;border-radius:10px;background:radial-gradient(circle at center,var(--line) 1px,transparent 1.5px) 0 0/14px 14px,var(--surface);border:1px solid var(--line);overflow:hidden}
+.rd-agent{position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:var(--ours);box-shadow:0 0 0 6px #3b5bdb22;transition:left .7s var(--ease),top .7s var(--ease)}
+.rd-goal{position:absolute;right:8%;top:18%;font-size:16px;color:var(--gold, #e5a53a)}
+.rd-keys{display:grid;grid-template-columns:repeat(2,40px);gap:6px}
+.rd-keys .key{min-width:0;padding:8px 0}
+.rd-keys .key.rd-press{animation:keyTap .5s var(--ease-spring)}
+@keyframes keyTap{30%{transform:translateY(3px) scale(.94)}}
+.rd-log{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.rd-log>div{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:8px 10px;display:grid;gap:2px}
+.rd-log span{font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--muted)}
+.rd-log b{font-size:13px;color:var(--ink);font-variant-numeric:tabular-nums}
+.rd-log>div:nth-child(2) b{color:var(--cpt)}.rd-log>div:nth-child(3) b{color:var(--up)}
+.agent-table-wrap.is-visible td.yes{animation:checkPop .55s var(--ease-spring) both .25s}
+@keyframes checkPop{from{transform:scale(.2);opacity:0}}
+
+/* ---------- Charts: every bar glides between states ---------- */
+.research-track i,.comparison-track i,.latency-fill,.wf-track i{transition:width .85s var(--ease),left .85s var(--ease),background .3s}
+.attempt-track i,.decay-cell i{transition:height .85s var(--ease),background .3s}
+.pr-track i{transition:width .85s var(--ease),opacity .4s}
+.ours .research-track i,.ours .pr-track .pr-fill,.ours .comparison-track .solid,.latency-row.fastest .latency-fill,.attempt-track i{background:linear-gradient(90deg,#6d8bff,var(--ours))}
+.rollout-count:first-child .attempt-track i{background:#aab3c8}
+.research-row,.comparison-row,.pr-row,.latency-row,.wf-row{transition:background .25s}
+.research-row:not(.ours):hover,.comparison-row:not(.ours):hover,.pr-row:not(.ours):hover{background:var(--alt)}
+.research-row>b,.bar-value,.pr-value,.latency-value,.rollout-count b,.rollout-endpoints strong,.wf-row b,.sl-readout b,.result-callouts strong{font-variant-numeric:tabular-nums}
+/* Pause ⇄ Run: the paused score stays behind as a ghost so the drop is visible. */
+.pr-track .pr-ghost{background:repeating-linear-gradient(135deg,#aab3c566 0 4px,#aab3c533 4px 8px);opacity:0;z-index:0}
+.pause-run[data-mode=running] .pr-track .pr-ghost{opacity:1}
+.pr-track .pr-fill{z-index:1}
+.ours .pr-track .pr-ghost{background:repeating-linear-gradient(135deg,#3b5bdb44 0 4px,#3b5bdb22 4px 8px)}
+.pr-delta{display:inline-block}
+.pr-delta.pop{animation:deltaPop .6s var(--ease-spring) both}
+@keyframes deltaPop{from{transform:scale(.3) translateX(-6px);opacity:0}}
+.pr-switch .knob{transition:background .35s}
+.pr-switch .knob::after{transition:transform .45s var(--ease-spring)}
+.pr-switch:active .knob::after{width:32px}
+.pr-switch[aria-checked=true] .knob{box-shadow:0 0 0 0 #d64c4c66;animation:runPulse 1.6s ease-out 2}
+@keyframes runPulse{to{box-shadow:0 0 0 10px #d64c4c00}}
+.pause-run.pr-flash .pr-chart{animation:chartFlash .7s ease}
+@keyframes chartFlash{30%{filter:saturate(1.4) brightness(1.03)}}
+/* Scaling-law explorer: curves morph and the marker glides. */
+.sl-svg .curve{transition:d .6s var(--ease),stroke .3s,stroke-width .3s,opacity .3s}
+.sl-svg .curve-label{transition:transform .6s var(--ease),fill .3s}
+.sl-svg .marker{transition:transform .45s var(--ease)}
+.sl-svg .marker-halo{fill:var(--ours);opacity:.18;transition:transform .45s var(--ease);animation:halo 2s ease-in-out infinite;transform-box:fill-box}
+@keyframes halo{50%{opacity:.05}}
+.sl-svg .grid,.sl-svg .tick{transition:opacity .3s}
+.sl-readout{transition:background .3s}
+.sl-controls output{display:inline-block;transition:transform .2s}
+/* Milestone timelines grow segment by segment. */
+.ms-bar .ms-seg{transform-origin:left center}
+.ms-bar.ms-grow .ms-seg{animation:segGrow .55s var(--ease) both;animation-delay:calc(var(--i,0) * 14ms)}
+@keyframes segGrow{from{transform:scaleX(0);opacity:0}}
+.ms-detail.ms-pop>*{animation:mediaIn .35s var(--ease) both}
+.ms-detail.ms-pop>:nth-child(2){animation-delay:.04s}.ms-detail.ms-pop>:nth-child(3){animation-delay:.08s}
+
+/* ---------- Tables ---------- */
+.sortable-table thead th{cursor:pointer;user-select:none;transition:color .2s}
+.sortable-table thead th:hover{color:var(--ours)}
+.sortable-table thead th::after{content:'↕';display:inline-block;margin-left:5px;opacity:0;transition:opacity .2s,transform .3s var(--ease)}
+.sortable-table thead th:hover::after{opacity:.45}
+.sortable-table thead th[aria-sort=descending]::after{content:'↓';opacity:1;color:var(--ours)}
+.sortable-table thead th[aria-sort=ascending]::after{content:'↓';opacity:1;color:var(--ours);transform:rotate(180deg)}
+.sortable-table thead th:focus-visible{outline:2px solid var(--ours);outline-offset:-2px}
+.sortable-table tbody tr{transition:background .2s}
+.sortable-table tbody tr:not(.highlight):hover{background:var(--alt)}
+
+/* ---------- Disclosure panels and dialogs ---------- */
+.figure-details{transition:border-color .3s,box-shadow .3s}
+.figure-details:hover{border-color:#cfd8f4}
+.figure-details[open]{box-shadow:var(--shadow-soft)}
+.figure-details[open]>:not(summary){animation:detailsIn .5s var(--ease) both}
+@keyframes detailsIn{from{opacity:0;transform:translateY(-8px)}}
+.figure-details summary>span{transition:transform .35s var(--ease-spring)}
+dialog[open]{animation:dialogIn .42s var(--ease)}
+dialog[open]::backdrop{animation:fadeIn .35s ease}
+@keyframes dialogIn{from{opacity:0;transform:translateY(22px) scale(.96)}}
+@keyframes fadeIn{from{opacity:0}}
+.dialog-media.media-in>*{animation:mediaIn .45s var(--ease)}
+.dialog-copy.media-in>*{animation:mediaIn .45s var(--ease) both}
+.dialog-copy.media-in>:nth-child(2){animation-delay:.05s}.dialog-copy.media-in>:nth-child(3){animation-delay:.1s}
+@keyframes mediaIn{from{opacity:0;transform:translateY(8px)}}
+.dialog-playlist button{transition:background .2s,color .2s,transform .15s}
+.dialog-playlist button:not(:disabled):hover{background:var(--ours);color:#fff;border-color:var(--ours)}
+.dialog-playlist button:not(:disabled):active{transform:scale(.95)}
+
+/* ---------- Figure lightbox ---------- */
+.paper-figure>a{cursor:zoom-in;overflow:hidden;border-radius:6px}
+.paper-figure>a img{transition:transform .7s var(--ease)}
+.paper-figure>a:hover img{transform:scale(1.015)}
+.lightbox{position:fixed;inset:0;z-index:200;background:#080b1300;cursor:zoom-out;transition:background .4s ease,backdrop-filter .4s ease}
+.lightbox.open{background:#080b13e0;backdrop-filter:blur(6px)}
+.lightbox:focus{outline:none}
+.lightbox-img{position:fixed;object-fit:contain;transform-origin:0 0;background:#fff;border-radius:10px;box-shadow:0 30px 90px #000b}
+.lightbox-close{position:fixed;top:16px;right:20px;width:42px;height:42px;border-radius:50%;border:1px solid #ffffff40;background:#ffffff1a;color:#fff;font-size:24px;line-height:1;opacity:0;transition:opacity .3s .15s,background .2s}
+.lightbox-close:hover{background:var(--ours)}
+.lightbox-hint{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);font-size:12px;color:#ffffffa0;opacity:0;transition:opacity .3s .2s;pointer-events:none}
+.lightbox.open .lightbox-close,.lightbox.open .lightbox-hint{opacity:1}
+
+/* ---------- Small interactions ---------- */
+#theme-toggle{transition:transform .6s var(--ease-spring),color .2s,border-color .2s}
+#theme-toggle[aria-pressed=true]{transform:rotate(180deg)}
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+.action-controls button,#copy-bibtex,.memory-modes button{transition:background .2s,color .2s,transform .15s}
+.action-controls button:hover{background:var(--ours);color:#fff;border-color:var(--ours)}
+.action-controls button:active,#copy-bibtex:active{transform:scale(.95)}
+.comparison-toolbar select,.sl-controls select{transition:border-color .2s,box-shadow .2s}
+.comparison-toolbar select:hover,.sl-controls select:hover,.comparison-toolbar select:focus,.sl-controls select:focus{border-color:var(--ours);box-shadow:0 0 0 3px #3b5bdb1f;outline:none}
+#read-progress{background:linear-gradient(90deg,#6d8bff,var(--ours),#b79bff)}
+
+/* ---------- Replays, ladders, sliders, chapter progress ---------- */
+.engine-table-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.engine-table-head h3{margin:0}
+.replay-btn,.ladder-replay{border:1px solid var(--line);background:var(--surface);color:var(--ours);border-radius:999px;padding:5px 12px;font-size:11px;font-weight:600;transition:background .2s,color .2s,border-color .2s,transform .15s}
+.replay-btn:hover,.ladder-replay:hover{background:var(--ours);color:#fff;border-color:var(--ours)}
+.replay-btn:active,.ladder-replay:active{transform:scale(.94)}
+.ladder-panel{position:relative}.ladder-replay{position:absolute;top:18px;right:18px}
+.wf-row{opacity:.32;transition:opacity .45s,background .25s}.wf-row.on{opacity:1}
+.wf-row.on .wf-track i.cut{animation:cutGlow 1s ease}
+@keyframes cutGlow{0%{filter:brightness(1.6)}100%{filter:none}}
+.engine-speedup,.latency-pair b{font-variant-numeric:tabular-nums}
+.ladder-baseline{opacity:0;transform:translateY(-12px);transition:opacity .5s,transform .7s var(--ease-spring)}
+.ladder-baseline.in{opacity:1;transform:none}
+.ladder-step b{transition:transform .4s var(--ease-spring)}
+.ladder-step.lit b{animation:stepPop .5s var(--ease-spring)}
+@keyframes stepPop{from{transform:scale(.6)}}
+.ladder-step i{transition:height 1s var(--ease)}
+.decay-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:22px;font-size:12px;color:var(--secondary)}
+.decay-controls label{font-weight:700;color:var(--ink)}
+.decay-controls input[type=range]{flex:1;min-width:120px;accent-color:var(--cpt)}
+.decay-controls output{min-width:34px;font-weight:700;color:var(--cpt);font-variant-numeric:tabular-nums}
+.decay-share-wrap{flex-basis:100%;font-size:11px;color:var(--muted)}.decay-share-wrap b{color:var(--cpt);font-variant-numeric:tabular-nums}
+.decay-demo{margin-top:6px}.decay-caption{margin-top:12px}
+.decay-cell small{font-variant-numeric:tabular-nums}
+.film-chapters button{position:relative;overflow:hidden}
+.chapter-progress{position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,#87dcd8,#a6b5ff);transform:scaleX(0);transform-origin:left;transition:transform .3s linear;opacity:.85;pointer-events:none}
+.sl-svg .marker-guide{stroke:var(--ours);stroke-width:1;stroke-dasharray:3 3;opacity:.45}
+.sl-svg.sl-draw .curve{stroke-dasharray:1;animation:curveDraw 1.4s var(--ease) both}
+.sl-svg.sl-draw .curve:nth-of-type(2){animation-delay:.1s}.sl-svg.sl-draw .curve:nth-of-type(3){animation-delay:.2s}.sl-svg.sl-draw .curve:nth-of-type(4){animation-delay:.3s}
+@keyframes curveDraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+
+@media(prefers-reduced-motion:reduce){
+  .m-reveal,.m-stagger>*{opacity:1!important;transform:none!important}
+  .gradient-title,.game-wall,.hero-content>*,.pill-accent::after,.film-now i,.infra-flow>i,.memory-flow i,.remap .key,.remap .arrow,.sl-svg .marker-halo{animation:none!important}
+  *,*::before,*::after{animation-duration:1ms!important;animation-iteration-count:1!important}
+}
+
+/* Hero film: frameless and wider. The video sits directly on the hero background; chapters
+   and the now-playing line stay underneath as a light strip. */
+.hero .hero-media.hero-film{max-width:min(1760px,calc(100vw - 32px));margin-top:34px;background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible}
+.hero-media.hero-film video{border-radius:14px;background:#000;box-shadow:0 30px 80px #000a}
+.hero-film .film-chapters{background:transparent;border:0;padding:0;margin-top:14px}
+.hero-film .film-chapters button{padding:12px 13px 10px}
+.hero-film .film-now{padding:10px 4px 0}
+@media(max-width:600px){.hero .hero-media.hero-film{max-width:calc(100vw - 16px)}.hero-media.hero-film video{border-radius:10px}}
+
+/* RL attempt bars: a long, soft ease so each bar glides rather than snaps. The bar is anchored
+   at the bottom and grows with will-change on height only; the rounded top stays crisp. */
+.attempt-track i{transition:background .4s ease!important;will-change:height;border-radius:6px 6px 4px 4px}
+.attempt-track{background:linear-gradient(180deg,#e9edf5,#dfe4ee)}
+html[data-theme=dark] .attempt-track{background:linear-gradient(180deg,#1c2334,#171d2b)}
+.rollout-count b{transition:color .3s}
+@media(prefers-reduced-motion:reduce){.attempt-track i{transition:none}}
+/* Let the film break out of the 1240px content column and span most of the viewport. */
+.hero .hero-media.hero-film{width:min(1760px,calc(100vw - 32px));max-width:none;position:relative;left:50%;transform:translateX(-50%);margin-left:0;margin-right:0}
+@media(max-width:600px){.hero .hero-media.hero-film{width:calc(100vw - 16px)}}
+/* Hero identity: scale the logo and wordmark together, centred as one group. */
+.hero{padding-top:clamp(56px,5vw,88px)}
+.hero-wordmark{display:flex;align-items:center;justify-content:center;gap:.16em;width:fit-content;margin:0 auto 26px;font-size:clamp(96px,12vw,160px)}
+.hero-wordmark .gradient-title{margin:0;font-size:.76em;letter-spacing:-.025em}
+.hero-logo{display:block;flex:0 0 auto;width:.625em;height:.625em;filter:drop-shadow(0 0 24px rgba(110,139,250,.45))}
+.hero .paper-title{max-width:1240px;margin-inline:auto;font-size:clamp(28px,3vw,40px);font-weight:650;line-height:1.35;letter-spacing:-.8px}
+.hero .team-plaque{margin-top:30px;padding:13px 28px;gap:24px;border-radius:16px}
+.hero .team-plaque strong{font-size:29px;letter-spacing:-1px}
+.hero .team-plaque span{font-size:17px;padding-left:24px}
+.hero .hero-buttons{gap:12px;margin-top:28px}
+.hero-buttons .pill{font-size:17px;min-height:50px;padding:12px 24px;gap:10px}
+.hero-buttons .pill small{font-size:10px;padding:2px 6px}
+.hero .hero-media.hero-film{margin-top:46px}
+@media(max-width:800px){
+  .hero{padding-top:52px}
+  .hero-wordmark{font-size:clamp(88px,14vw,120px);margin-bottom:24px}
+  .hero .paper-title{font-size:clamp(24px,3.8vw,30px);line-height:1.4;letter-spacing:-.5px}
+  .hero .team-plaque{padding:12px 24px;gap:20px}
+  .hero .team-plaque strong{font-size:27px}
+  .hero .team-plaque span{font-size:15px;padding-left:20px}
+  .hero-buttons .pill{font-size:15px;padding:11px 19px;gap:8px;min-height:46px}
+}
+@media(max-width:520px){
+  .hero{padding-top:38px}
+  .hero-wordmark{font-size:clamp(82px,23vw,104px);margin-bottom:20px;gap:.12em}
+  .hero .paper-title{font-size:22px;line-height:1.4;letter-spacing:-.4px}
+  .hero .team-plaque{margin-top:24px;padding:11px 18px;gap:16px;border-radius:13px}
+  .hero .team-plaque strong{font-size:24px}
+  .hero .team-plaque span{font-size:13px;padding-left:16px}
+  .hero .hero-buttons{gap:8px;margin-top:24px}
+  .hero-buttons .pill{font-size:13px;padding:10px 13px;gap:6px;min-height:44px}
+  .hero-buttons .pill small{font-size:8px;padding:1px 4px}
+  .hero .hero-media.hero-film{margin-top:34px}
+}
+
+/* Headings wrap in balanced lines; body copy avoids a lone last word. */
+h1,h2,h3,h4{text-wrap:balance}
+p,.lead,.body-copy,figcaption{text-wrap:pretty}
+
+/* Larger primary navigation. The first three links lead to story, quests and minigames. */
+html{scroll-padding-top:100px}
+header.nav .nav-inner{max-width:1760px;height:80px;padding-inline:32px;gap:28px}
+header.nav .brand{flex:0 0 auto;font-size:32px;letter-spacing:-.8px}
+header.nav nav{min-width:0;gap:8px;justify-content:center}
+header.nav nav a{flex:0 0 auto;padding:10px 12px;font-size:18px;line-height:1.5;font-weight:650}
+header.nav #theme-toggle{flex:0 0 auto;width:44px;height:44px;margin-left:0;font-size:21px}
+@media(max-width:1400px){
+  header.nav .nav-inner{padding-inline:24px;gap:22px}
+  header.nav .brand{font-size:30px}
+  header.nav nav{gap:4px}
+  header.nav nav a{font-size:16px;padding:10px}
+}
+@media(min-width:801px) and (max-width:1100px){
+  header.nav .nav-inner{gap:18px}
+  header.nav nav{justify-content:flex-start;overflow-x:auto;scrollbar-width:none}
+  header.nav nav::-webkit-scrollbar{display:none}
+  header.nav nav a{font-size:15px;padding:10px 9px}
+}
+@media(max-width:800px){
+  html{scroll-padding-top:92px}
+  header.nav .nav-inner{height:72px;padding-inline:20px}
+  header.nav .brand{font-size:28px}
+  header.nav #theme-toggle{width:40px;height:40px;font-size:19px}
+}
+
+/* Separate navigation groups without visible category labels. */
+header.nav nav .nav-divider{display:block;flex:0 0 1px;width:1px;height:22px;margin-inline:8px;background:var(--line)}
+@media(max-width:1400px){header.nav nav .nav-divider{height:20px;margin-inline:5px}}
+
+/* Wider content sections below the hero, including formerly narrow research sections. */
+.section > .wrap,.footer > .wrap{width:min(100%,1920px);max-width:1920px;padding-inline:32px}
+@media(max-width:800px){.section > .wrap,.footer > .wrap{padding-inline:24px}}
+@media(max-width:520px){.section > .wrap,.footer > .wrap{padding-inline:20px}}
+
+/* Readable type for the wider content sections. Keep the hero and navigation independent. */
+.section{--section-body:20px;--section-copy:17px;--section-label:15px;--section-small:13px;font-size:var(--section-body)}
+.section h2{font-size:clamp(34px,3.5vw,48px);line-height:1.2}
+.section.chapter-intro h2,.section .showcase-heading h2{font-size:clamp(36px,4vw,56px)}
+.section.chapter-intro h2{max-width:1100px}
+.section h3{font-size:24px;line-height:1.4}
+.section :is(.research-subsection,.data-subsection)>h3,.section .rollout-case-head h3{font-size:32px}
+.section :is(.lead,.body-copy,.abstract-box p){font-size:var(--section-body);line-height:1.8}
+.section .lead{margin-bottom:32px}
+.section .section-intro{max-width:1280px}
+.section.chapter-intro .lead{max-width:1100px}
+.section .bench-compare>.body-copy{max-width:1100px}
+.section :is(.eyebrow,.chapter-marker){font-size:var(--section-label)}
+.section .chapter-marker b{font-size:17px}
+
+/* Card headings, explanatory copy and the gallery controls. */
+.section :is(.pipeline h3,.video-meta h3,.cpt-trick h3,.pr-head h3,.engine-table h3,.result-panel h3,.resource-card h3,.chart-heading h3,.streaming-metric h3,.bc-head h4){font-size:21px}
+.section :is(.comparison-toolbar h3,.story-gallery-heading h3,.mechanic-head h3,.bench-compare>h3){font-size:26px}
+.section .video-card.featured h3{font-size:25px}
+.section .mechanic-rest .video-card h3{font-size:18px}
+.section :is(.pipeline p,.contribution p,.video-meta p,.cpt-trick>p,.memory-notes p,.hierarchy-cards p,.infra-flow p,.engine-summary>p,.resource-card p,.result-panel>p,.rollout-case-head p,.mechanism-copy,.action-think,.action-note,.pr-summary,.df-caption,.df-goal p,.df-task p,.rl-explanation){font-size:var(--section-copy);line-height:1.7}
+.section .mechanic-desc{font-size:var(--section-copy)!important;max-width:560px}
+.section .featured-note{font-size:var(--section-copy)!important}
+.section :is(.memory-notes b,.training-notes b){font-size:19px}
+.section .rollout-case-head p{max-width:720px}
+.section :is(.segmented button,.showcase-filters button,.comparison-toolbar select,.df-steps button,.memory-flow span){font-size:16px}
+.section .segmented button{padding:10px 20px}
+.section .story-tabs button span{font-size:24px}
+.section .story-tabs button small{font-size:var(--section-small)}
+.section .story-tabs.segmented button{padding:20px 24px;white-space:normal}
+.section :is(.control-label,.gallery-count,.type-tag,.ability-tag,.stage-legend,.pipeline-note,.mechanic-head p,.figure-note,.paper-figure figcaption,.video-figure figcaption,.figure-details summary,.method-tags>span,.finding-label,.hardware,.chart-subtitle,.chart-legend,.result-panel .panel-note,.training-notes p,.bc-note,.bc-model,.bc-delta,.bc-clip figcaption,.bc-mean,.action-controls,.action-controls button,.action-facts span,.decay-controls,.decay-caption,.remap p,.sl-controls label,.sl-readout span,.df-foot){font-size:var(--section-label)}
+.section :is(.pipeline .step-no,.pipeline small,.hierarchy-cards span,.infra-flow article>span,.resource-card>span,.media-label,.stage-badge,.clip-duration,.preview-note,.clip-skill,.comparison-toolbar label,.chart-axis,.chart-scale,.bc-tag,.bc-solved,.bc-failed,.df-label,.df-time,.df-steps button b,.decay-share-wrap,.sl-readout small,.ladder-sub,.ladder-step small,.ladder-baseline span){font-size:var(--section-small)}
+.section :is(.replay-btn,.ladder-replay){font-size:var(--section-small)}
+.section .df-op{font-size:var(--section-label)}
+.section .bibtex-box{font-size:15px}
+.section #copy-bibtex{font-size:13px}
+
+/* Metrics and HTML chart labels grow with their explanatory text. */
+.section .pipeline strong{font-size:29px}
+.section :is(.inline-metrics strong,.data-metrics strong,.infra-metrics strong,.rollout-endpoints strong){font-size:40px}
+.section .hierarchy-cards strong{font-size:36px}
+.section .result-callouts strong{font-size:46px}
+.section :is(.inline-metrics span,.data-metrics span,.infra-metrics span,.result-callouts span){font-size:16px;line-height:1.6}
+.section :is(.result-callouts small,.rollout-endpoints small,.rollout-count>span){font-size:var(--section-small)}
+.section .action-facts strong{font-size:26px}
+.section .engine-summary .latency-pair{font-size:27px}
+.section :is(.research-row,.research-name,.research-row>b,.bar-name,.bar-value,.comparison-row,.pr-row,.pr-value,.stage-row,.latency-config,.latency-value,.wf-row){font-size:16px}
+.section :is(.pr-delta,.pr-axis,.bar-rank,.stage-gain,.rollout-count,.ladder-gain){font-size:var(--section-label)}
+.section :is(.rollout-count b,.bc-clip figcaption b,.bc-mean b){font-size:18px}
+.section .research-row{grid-template-columns:260px minmax(0,1fr) 90px;padding-block:10px}
+.section .engine-story .research-row{grid-template-columns:200px minmax(0,1fr) 90px}
+.section .streaming-metric .research-row{grid-template-columns:160px minmax(0,1fr) 70px}
+.section .wf-row{grid-template-columns:260px minmax(0,1fr) 90px}
+.section .research-track{height:14px}
+.section table{font-size:16px}
+.section th{font-size:13px}
+.section :is(th,td){padding:12px 14px}
+.section .agent-table td:is(.yes,.no){font-size:19px}
+.section .bc-clip figcaption{flex-wrap:wrap}
+.section .bc-mean{grid-template-columns:80px minmax(0,1fr) 65px}
+
+/* Compact layouts retain the hierarchy without oversized labels or crowded controls. */
+@media(max-width:1100px){
+  .section .pipeline h3{font-size:19px}
+  .section .pipeline p{font-size:15px}
+  .section .wf-row{grid-template-columns:200px minmax(0,1fr) 80px}
+}
+@media(max-width:800px){
+  .section{--section-body:18px;--section-copy:16px;--section-label:14px;--section-small:12px}
+  .section h2{font-size:36px}
+  .section.chapter-intro h2,.section .showcase-heading h2{font-size:40px}
+  .section :is(.research-subsection,.data-subsection)>h3,.section .rollout-case-head h3{font-size:28px}
+  .section .story-tabs button span{font-size:20px}
+  .section .story-tabs.segmented button{padding:16px 14px}
+  .section .segmented{flex-wrap:wrap}
+  .section .segmented button{font-size:14px;padding:9px 14px;white-space:normal}
+  .section .research-row,.section .engine-story .research-row{grid-template-columns:190px minmax(0,1fr) 80px}
+  .section .result-callouts strong{font-size:36px}
+  .section .result-callouts span{font-size:14px}
+  .section .wf-row{grid-template-columns:160px minmax(0,1fr) 70px;font-size:14px}
+}
+@media(max-width:520px){
+  .section{--section-body:17px;--section-copy:15px;--section-label:13px;--section-small:11px}
+  .section h2{font-size:32px}
+  .section.chapter-intro h2,.section .showcase-heading h2{font-size:34px}
+  .section h3{font-size:22px}
+  .section :is(.research-subsection,.data-subsection)>h3,.section .rollout-case-head h3{font-size:26px}
+  .section :is(.comparison-toolbar h3,.story-gallery-heading h3,.mechanic-head h3,.bench-compare>h3){font-size:23px}
+  .section .story-tabs button span{font-size:17px}
+  .section .story-tabs button small{font-size:10px;letter-spacing:.6px}
+  .section .story-tabs.segmented button{padding:12px 8px}
+  .section :is(.inline-metrics strong,.data-metrics strong,.infra-metrics strong,.rollout-endpoints strong){font-size:32px}
+  .section .result-callouts strong{font-size:30px}
+  .section :is(.inline-metrics span,.data-metrics span,.infra-metrics span,.result-callouts span){font-size:13px}
+  .section .research-row,.section .engine-story .research-row,.section .streaming-metric .research-row{grid-template-columns:minmax(0,1fr) 72px;font-size:14px}
+  .section .research-name,.section .research-row>b{font-size:14px}
+  .section .streaming-metric .research-track{grid-column:1;grid-row:2}
+  .section .streaming-metric .research-row>b{grid-column:2;grid-row:1/3}
+  .section .wf-row{grid-template-columns:130px minmax(0,1fr) 60px;font-size:12px;gap:8px}
+  .section table,.section td{font-size:14px}
+  .section th{font-size:11px}
+  .section :is(th,td){padding:10px 9px}
+}
+
+/* Give the widened sections a more generous vertical rhythm. */
+.section{--section-space:clamp(88px,6vw,120px);padding-block:var(--section-space)}
+.section:is(#main-story,#pipeline,#real-time){padding-block:var(--section-space)}
+.section>.wrap>h2,.section .showcase-heading h2{margin-bottom:26px}
+.section :is(.eyebrow,.chapter-marker){margin-bottom:16px}
+.section .lead{margin-bottom:42px}
+.section .gallery-controls{margin-block:38px 26px}
+.section .story-tabs.segmented{margin-block:40px 30px}
+.section .story-gallery-heading{margin-bottom:26px}
+.section .video-grid{row-gap:30px}
+.section .video-meta{padding-block:24px 26px}
+.section .mechanic-rest .video-meta{padding-block:16px 18px}
+.section .video-card.featured .video-meta{padding-block:26px 28px}
+
+/* Overview cards have a shared baseline and enough height for their longer copy. */
+.section .pipeline{margin-block:44px 0}
+.section .pipeline>a{display:flex;flex-direction:column;min-height:350px;padding:34px 28px 30px}
+.section .pipeline h3{margin-block:16px 12px}
+.section .pipeline p{margin-bottom:26px}
+.section .pipeline strong{margin-top:auto}
+.section .pipeline-note{margin-top:28px;row-gap:12px}
+.section .agent-table-wrap{margin-top:38px}
+.section .agent-table :is(th,td){padding-block:15px}
+
+.section .research-subsection{margin-top:64px;padding-top:50px}
+.section :is(.research-subsection,.data-subsection)>h3{margin-bottom:18px}
+.section :is(.research-subsection,.data-subsection)>.body-copy{margin-bottom:32px}
+.section :is(.cpt-tricks,.hierarchy-cards,.engine-story,.infra-flow){margin-top:36px;row-gap:28px}
+.section :is(.cpt-trick,.hierarchy-cards article,.infra-flow article,.engine-summary,.engine-table,.streaming-metric,.bench-compare,.df-anim){padding-block:32px}
+.section .result-callouts{padding-block:34px;margin-block:38px}
+.section .data-metrics{padding-block:34px;margin-block:40px}
+.section .research-chart{padding-block:28px}
+.section .research-row{padding-block:13px}
+.section .comparison-toolbar{margin-block:38px 24px}
+.section .paper-figure{margin-top:34px}
+.section .figure-details{margin-top:28px}
+.section .figure-details summary{padding-block:21px}
+.section .abstract-box{padding-block:36px}
+
+@media(max-width:1100px) and (min-width:801px){
+  .section .pipeline>a{padding-inline:20px;min-height:350px}
+}
+@media(max-width:800px){
+  .section{--section-space:76px}
+  .section .lead{margin-bottom:34px}
+  .section .pipeline>a{min-height:290px;padding:28px 22px}
+  .section .pipeline{margin-top:34px}
+  .section .research-subsection{margin-top:50px;padding-top:40px}
+  .section :is(.cpt-trick,.hierarchy-cards article,.infra-flow article,.engine-summary,.engine-table,.streaming-metric,.bench-compare,.df-anim){padding-block:26px}
+  .section .result-callouts{padding-block:28px}
+}
+@media(max-width:520px){
+  .section{--section-space:60px}
+  .section>.wrap>h2,.section .showcase-heading h2{margin-bottom:22px}
+  .section .gallery-controls{margin-block:28px 20px}
+  .section .story-tabs.segmented{margin-block:30px 24px}
+  .section .pipeline>a{min-height:0;padding:24px 18px}
+  .section .pipeline h3{margin-block:12px 10px}
+  .section .pipeline p{margin-bottom:20px}
+  .section .agent-table :is(th,td){padding-block:12px}
+  .section .research-subsection{margin-top:42px;padding-top:34px}
+  .section :is(.research-chart,.abstract-box){padding-block:22px}
+  .section .result-callouts{padding-block:24px;margin-block:30px}
+  .section .figure-details summary{padding-block:18px}
+}
+
+/* Enlarge the CPT illustrations themselves, not just their surrounding cards. */
+#control .action-demo{gap:32px;padding:32px;align-items:start}
+#control :is(.action-left,.action-right,.cpt-trick){min-width:0}
+#control :is(.action-left h3,.action-right h3,.cpt-trick h3){font-size:26px;margin-bottom:20px}
+#control .action-think{font-size:20px;line-height:1.75;min-height:112px;padding:20px 22px}
+#control .packet{gap:8px;margin-top:24px;grid-template-columns:150px repeat(6,minmax(0,1fr))}
+#control .packet-mouse{min-width:0;padding:12px;font-size:16px;line-height:1.5}
+#control .packet-mouse span{font-size:13px}
+#control .packet-block{min-height:76px;padding:12px 6px;font-size:18px;line-height:1.35;overflow-wrap:anywhere}
+#control .packet-scale{font-size:14px;margin:12px 0 0 158px}
+#control .action-serial{font-size:16px;line-height:1.8;padding:16px 18px;margin-top:24px;white-space:pre-wrap;overflow-wrap:anywhere}
+#control .action-note{font-size:20px;line-height:1.7;margin-block:18px}
+#control .action-controls{gap:10px;flex-wrap:wrap;margin-top:20px;font-size:16px}
+#control .action-controls button{font-size:17px;padding:10px 17px;min-height:44px}
+#control .keyboard{gap:10px;padding:24px}
+#control .key-row{gap:10px}
+#control .key{min-width:60px;padding:13px 15px;font-size:19px;line-height:1.4;border-radius:9px}
+#control .mouse-pad{height:210px;margin-top:24px}
+#control .mouse-arrow{width:180px;height:4px}
+#control .mouse-arrow::after{top:-6px;border-width:8px;border-left-width:12px}
+#control .mouse-dot{width:15px;height:15px}
+#control .mouse-label{left:16px;bottom:14px;font-size:15px}
+#control .action-facts{margin-top:40px;gap:22px}
+#control .action-facts strong{font-size:32px}
+#control .action-facts span{font-size:17px;line-height:1.6;margin-top:6px}
+
+#control .cpt-tricks{gap:28px;margin-top:60px}
+#control .cpt-trick{padding:32px}
+#control .cpt-trick>p{font-size:20px;line-height:1.75;margin-bottom:24px}
+#control .decay-chart-scroll{min-width:0;overflow-x:auto;overscroll-behavior-inline:contain}
+#control .decay-demo{height:300px;min-width:600px;gap:6px;padding-bottom:52px;margin-top:18px}
+#control .decay-cell b{font-size:17px;bottom:-28px}
+#control .decay-cell small{font-size:14px;bottom:-49px}
+#control .decay-controls{font-size:18px;gap:14px;margin-top:26px}
+#control .decay-controls input{min-height:32px}
+#control .decay-controls output{min-width:46px}
+#control .decay-share-wrap{font-size:16px}
+#control .cpt-trick>.decay-caption{font-size:17px;line-height:1.75;margin-top:16px}
+#control .remap{gap:18px}
+#control .remap .key{min-width:54px;font-size:19px;padding:12px}
+#control .remap .arrow{font-size:32px}
+#control .remap p{font-size:17px;line-height:1.7;margin-top:14px}
+#control .remap-demo{padding:22px;gap:20px;margin-top:26px}
+#control .rd-head{gap:12px}
+#control .rd-traj{font-size:14px}
+#control .rd-bind{font-size:15px;padding:4px 11px}
+#control .replay-btn{font-size:15px;padding:9px 14px;min-height:40px}
+#control .rd-track{height:220px}
+#control .rd-agent{width:30px;height:30px;margin:-15px 0 0 -15px;box-shadow:0 0 0 8px #3b5bdb22}
+#control .rd-goal{font-size:26px}
+#control .rd-keys{grid-template-columns:repeat(2,54px);gap:8px}
+#control .rd-keys .key{min-width:0;padding:12px 0;font-size:19px}
+#control .rd-log{gap:12px}
+#control .rd-log>div{min-width:0;padding:14px}
+#control .rd-log span{font-size:12px;line-height:1.5}
+#control .rd-log b{font-size:18px;line-height:1.5}
+
+@media(max-width:1400px){
+  #control .packet{grid-template-columns:repeat(6,minmax(0,1fr))}
+  #control .packet-mouse{grid-column:1/-1;flex-direction:row;align-items:center;justify-content:flex-start;gap:14px}
+  #control .packet-scale{margin-left:0}
+  #control .action-controls span{width:100%;margin-left:0}
+  #control :is(.action-left h3,.action-right h3){font-size:23px}
+}
+@media(max-width:1100px){
+  #control :is(.action-demo,.cpt-tricks){grid-template-columns:minmax(0,1fr)}
+  #control .action-think{min-height:92px}
+  #control .action-facts{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}
+}
+@media(max-width:600px){
+  #control .action-demo,#control .cpt-trick{padding:22px 18px}
+  #control :is(.action-left h3,.action-right h3,.cpt-trick h3){font-size:22px}
+  #control :is(.action-think,.action-note,.cpt-trick>p){font-size:17px}
+  #control .action-think{padding:16px;min-height:80px}
+  #control .packet{gap:6px}
+  #control .packet-mouse{font-size:15px}
+  #control .packet-block{font-size:14px;min-height:60px;padding:10px 3px}
+  #control .packet-scale{font-size:12px}
+  #control .action-serial{font-size:14px;padding:14px}
+  #control .action-controls button{font-size:14px;padding:9px 12px}
+  #control .action-controls{gap:8px;font-size:14px}
+  #control .keyboard{padding:20px 12px;gap:8px}
+  #control .key-row{gap:8px}
+  #control .key{min-width:48px;font-size:17px;padding:11px 12px}
+  #control .mouse-pad{height:160px}
+  #control .mouse-arrow{width:135px}
+  #control .mouse-label{font-size:13px;left:12px;right:12px}
+  #control .action-facts{gap:20px 12px}
+  #control .action-facts strong{font-size:28px}
+  #control .action-facts span{font-size:14px}
+  #control .decay-demo{height:220px}
+  #control .decay-controls{font-size:16px;gap:10px}
+  #control :is(.decay-share-wrap,.cpt-trick>.decay-caption,.remap p){font-size:15px}
+  #control .remap{grid-template-columns:minmax(0,1fr);gap:14px}
+  #control .remap .arrow{justify-self:center;transform:rotate(90deg)}
+  #control .remap .key{min-width:48px;font-size:17px;padding:11px}
+  #control .remap-demo{padding:16px;gap:16px}
+  #control .rd-spec{flex-basis:100%}
+  #control .rd-stage{grid-template-columns:minmax(0,1fr)}
+  #control .rd-keys{grid-template-columns:repeat(4,48px);justify-content:center}
+  #control .rd-keys .key{font-size:17px}
+  #control .rd-log{grid-template-columns:minmax(0,1fr);gap:8px}
+  #control .rd-log>div{grid-template-columns:1fr 1fr;align-items:center;padding:12px}
+  #control .rd-log b{font-size:16px}
+}
+
+/* Bring the remaining sections up to the CPT demo's reading scale. */
+.section:not(#control){--section-body:22px;--section-copy:20px;--section-label:17px;--section-small:14px}
+.section:not(#control) h2{font-size:clamp(36px,3.7vw,52px)}
+.section.chapter-intro:not(#control) h2,.section:not(#control) .showcase-heading h2{font-size:clamp(38px,4.3vw,60px)}
+.section:not(#control) h3{font-size:26px}
+.section:not(#control) :is(.research-subsection,.data-subsection)>h3,.section:not(#control) .rollout-case-head h3{font-size:36px}
+.section:not(#control) :is(.pipeline h3,.video-meta h3,.pr-head h3,.engine-table h3,.result-panel h3,.resource-card h3,.chart-heading h3,.streaming-metric h3,.bc-head h4){font-size:26px;line-height:1.4}
+.section:not(#control) :is(.comparison-toolbar h3,.story-gallery-heading h3,.mechanic-head h3,.bench-compare>h3){font-size:30px}
+.section:not(#control) .mechanic-rest .video-card h3{font-size:22px}
+.section:not(#control) :is(.memory-notes b,.training-notes b){font-size:22px}
+.section:not(#control) :is(.segmented button,.showcase-filters button,.comparison-toolbar select,.df-steps button){font-size:18px;line-height:1.5}
+.section:not(#control) .segmented{flex-wrap:wrap}
+.section:not(#control) .segmented button{padding:12px 22px;white-space:normal}
+.section:not(#control) .story-tabs button span{font-size:27px}
+.section:not(#control) .story-tabs.segmented button{padding:24px;gap:10px}
+.section:not(#control) .video-meta{padding-block:28px 30px}
+.section:not(#control) .video-meta h3{margin-bottom:10px}
+.section:not(#control) .paper-figure figcaption,.section:not(#control) .video-figure figcaption{font-size:18px;line-height:1.8;margin-top:22px}
+.section:not(#control) .figure-details summary{font-size:18px;padding-block:24px}
+.section:not(#control) :is(.replay-btn,.ladder-replay){font-size:16px;padding:9px 15px;min-height:42px}
+.section:not(#control) .pipeline>a{min-height:410px;padding-block:40px 34px}
+.section:not(#control) .pipeline strong{font-size:34px}
+.section:not(#control) :is(.research-subsection,.data-subsection){margin-top:76px;padding-top:56px}
+.section:not(#control) :is(.inline-metrics span,.data-metrics span,.infra-metrics span,.result-callouts span){font-size:18px;line-height:1.7}
+.section:not(#control) :is(.data-metrics,.result-callouts){padding-block:40px;margin-block:44px}
+.section:not(#control) :is(.hierarchy-cards article,.infra-flow article){padding-block:38px}
+.section:not(#control) .hierarchy-cards strong{font-size:42px;margin-block:22px 14px}
+.section:not(#control) .memory-flow{padding:30px;gap:16px}
+.section:not(#control) .memory-flow span{font-size:20px;padding:24px 16px;min-height:86px;display:grid;place-items:center}
+.section:not(#control) .memory-flow i{font-size:24px}
+.section:not(#control) .memory-notes{margin-top:38px;gap:30px}
+.section:not(#control) .rollout-counts{padding:30px;gap:22px}
+.section:not(#control) .rollout-count{gap:16px}
+.section:not(#control) .rollout-count>span{font-size:16px}
+.section:not(#control) .rollout-count b{font-size:22px}
+.section:not(#control) .attempt-track{height:160px}
+
+/* Give chart labels and values enough room, and make their marks easier to follow. */
+.section:not(#control) :is(.research-row,.research-name,.research-row>b,.bar-name,.bar-value,.comparison-row,.pr-row,.pr-value,.stage-row,.latency-config,.latency-value,.wf-row){font-size:18px}
+.section:not(#control) .research-row{min-height:62px;padding-block:16px;grid-template-columns:300px minmax(0,1fr) 100px}
+.section:not(#control) .research-track{height:18px}
+.section:not(#control) .engine-story .research-row{grid-template-columns:230px minmax(0,1fr) 100px}
+.section:not(#control) .streaming-metric .research-row{grid-template-columns:180px minmax(0,1fr) 80px}
+.section:not(#control) .engine-table-head{flex-wrap:wrap;row-gap:16px;margin-bottom:24px}
+.section:not(#control) .engine-table-head h3{flex:1;min-width:0}
+.section:not(#control) .waterfall{gap:14px}
+.section:not(#control) .wf-row{min-height:54px;grid-template-columns:280px minmax(0,1fr) 110px;gap:16px}
+.section:not(#control) .wf-track{height:22px}
+.section:not(#control) .engine-summary .latency-pair{font-size:32px}
+.section:not(#control) .latency-row{margin-block:26px;row-gap:12px}
+.section:not(#control) .latency-track{height:18px}
+.section:not(#control) .pr-switch{font-size:18px;line-height:1.5}
+.section:not(#control) .pr-switch .knob{flex-shrink:0}
+.section:not(#control) .pr-row{grid-template-columns:260px minmax(0,1fr) 66px 76px;gap:14px;padding:14px 12px;min-height:60px}
+.section:not(#control) .pr-track{height:22px}
+.section:not(#control) .pr-delta{font-size:17px}
+.section:not(#control) .pr-axis{margin-left:286px}
+.section:not(#control) :is(.comparison-row,.stage-row){padding-block:16px}
+.section:not(#control) :is(.comparison-track,.stage-track){height:20px}
+.section:not(#control) table{font-size:18px}
+.section:not(#control) th{font-size:15px}
+.section:not(#control) :is(th,td){padding-block:17px}
+.section:not(#control) .agent-table :is(th,td){padding-block:18px}
+.section:not(#control) .bc-card{padding:24px}
+.section:not(#control) .bc-head{margin-bottom:22px}
+.section:not(#control) .bc-tag{font-size:16px;margin-bottom:12px}
+.section:not(#control) .bc-clip figcaption{font-size:17px;margin-top:14px;gap:12px}
+.section:not(#control) :is(.bc-clip figcaption b,.bc-mean b){font-size:22px}
+.section:not(#control) .bc-means{padding-top:22px;margin-top:24px;row-gap:14px}
+.section:not(#control) .bc-mean{font-size:18px;grid-template-columns:95px minmax(0,1fr) 80px;min-height:44px}
+.section:not(#control) .bc-track{height:15px}
+.section:not(#control) .bibtex-box{font-size:17px;line-height:1.8;padding-block:26px}
+.section:not(#control) #copy-bibtex{font-size:15px;padding:9px 14px}
+
+/* The instruction hierarchy needs taller cells as well as larger annotations. */
+#memory .df-anim{padding:32px;margin-top:36px}
+#memory .df-steps{gap:10px}
+#memory .df-steps button{padding:10px 18px;min-height:46px}
+#memory .df-caption{margin-block:24px 28px}
+#memory .df-stage{grid-template-columns:300px minmax(0,1fr);gap:28px}
+#memory .df-source{padding:18px;gap:14px}
+#memory .df-rows{gap:20px;min-width:0}
+#memory .df-row{grid-template-columns:42px repeat(6,minmax(0,1fr));gap:12px}
+#memory .df-row-tag{font-size:18px}
+#memory :is(.df-clip,.df-goal,.df-task){min-width:0;padding:14px 12px;gap:12px}
+#memory .df-op{font-size:18px;line-height:1.65;overflow-wrap:anywhere}
+#memory :is(.df-goal p,.df-task p){font-size:20px;line-height:1.7}
+#memory .df-foot{font-size:17px;margin-top:26px}
+
+@media(max-width:1400px){
+  #memory .df-stage{grid-template-columns:minmax(0,1fr)}
+  #memory .df-source{position:static;max-width:360px}
+}
+@media(max-width:1100px){
+  .section:not(#control) .pipeline h3{font-size:23px}
+  .section:not(#control) .pipeline p{font-size:18px}
+  .section:not(#control) .wf-row{grid-template-columns:230px minmax(0,1fr) 100px}
+  #memory .df-row{grid-template-columns:36px repeat(3,minmax(0,1fr))}
+  #memory :is(.df-goal,.df-task){grid-column:2/-1!important}
+}
+@media(max-width:800px){
+  .section:not(#control){--section-body:20px;--section-copy:18px;--section-label:16px;--section-small:13px}
+  .section:not(#control) h2{font-size:38px}
+  .section.chapter-intro:not(#control) h2,.section:not(#control) .showcase-heading h2{font-size:42px}
+  .section:not(#control) :is(.research-subsection,.data-subsection)>h3,.section:not(#control) .rollout-case-head h3{font-size:30px}
+  .section:not(#control) :is(.comparison-toolbar h3,.story-gallery-heading h3,.mechanic-head h3,.bench-compare>h3){font-size:26px}
+  .section:not(#control) :is(.segmented button,.comparison-toolbar select,.df-steps button){font-size:16px}
+  .section:not(#control) .segmented button{padding:10px 16px}
+  .section:not(#control) .story-tabs button span{font-size:22px}
+  .section:not(#control) .story-tabs.segmented button{padding:18px 14px}
+  .section:not(#control) .pipeline>a{min-height:300px;padding-block:30px}
+  .section:not(#control) :is(.research-subsection,.data-subsection){margin-top:56px;padding-top:42px}
+  .section:not(#control) .memory-flow{padding:24px;gap:12px}
+  .section:not(#control) .memory-flow span{font-size:18px;min-height:76px;padding:20px 12px}
+  .section:not(#control) :is(.research-row,.engine-story .research-row){grid-template-columns:200px minmax(0,1fr) 90px}
+  .section:not(#control) .wf-row{grid-template-columns:190px minmax(0,1fr) 85px;font-size:16px;gap:10px}
+  .section:not(#control) .latency-row{grid-template-columns:minmax(0,1fr) 90px;gap:10px}
+  .section:not(#control) .latency-value{grid-column:2;grid-row:1}
+  .section:not(#control) .latency-track{grid-column:1/-1;grid-row:2}
+  .section:not(#control) .pr-row{grid-template-columns:190px minmax(0,1fr) 60px 68px;font-size:16px;gap:10px}
+  .section:not(#control) .pr-axis{margin-left:212px}
+  .section:not(#control) .attempt-track{height:130px}
+  #memory .df-anim{padding:24px}
+}
+@media(max-width:600px){
+  .section:not(#control){--section-body:18px;--section-copy:17px;--section-label:15px;--section-small:12px}
+  .section:not(#control) h2{font-size:34px}
+  .section.chapter-intro:not(#control) h2,.section:not(#control) .showcase-heading h2{font-size:36px}
+  .section:not(#control) :is(.pipeline h3,.video-meta h3,.pr-head h3,.engine-table h3,.result-panel h3,.resource-card h3,.chart-heading h3,.streaming-metric h3,.bc-head h4){font-size:23px}
+  .section:not(#control) .pipeline p{font-size:17px}
+  .section:not(#control) .pipeline>a{min-height:0;padding-block:26px}
+  .section:not(#control) .story-tabs button span{font-size:18px}
+  .section:not(#control) .story-tabs button small{font-size:11px;letter-spacing:.6px}
+  .section:not(#control) .story-tabs.segmented button{padding:14px 8px}
+  .section:not(#control) :is(.research-subsection,.data-subsection){margin-top:46px;padding-top:36px}
+  .section:not(#control) :is(.inline-metrics span,.data-metrics span,.infra-metrics span,.result-callouts span){font-size:15px}
+  .section:not(#control) :is(.data-metrics,.result-callouts){padding-block:28px;margin-block:34px}
+  .section:not(#control) .rollout-counts{grid-template-columns:repeat(3,minmax(0,1fr));padding:22px 16px;gap:22px 14px}
+  .section:not(#control) .rollout-count>span{font-size:14px}
+  .section:not(#control) .rollout-count b{font-size:20px}
+  .section:not(#control) :is(.research-row,.engine-story .research-row,.streaming-metric .research-row){grid-template-columns:minmax(0,1fr) 80px;padding-block:14px}
+  .section:not(#control) :is(.research-name,.research-row>b){font-size:16px}
+  .section:not(#control) .research-track{grid-column:1;grid-row:2;height:12px}
+  .section:not(#control) .research-row>b{grid-column:2;grid-row:1/3}
+  .section:not(#control) .wf-row{grid-template-columns:minmax(0,1fr) 85px;row-gap:8px;padding-block:8px}
+  .section:not(#control) .wf-track{grid-column:1/-1;grid-row:2;height:18px}
+  .section:not(#control) .wf-row b{grid-column:2;grid-row:1}
+  .section:not(#control) .pr-switch{font-size:15px;gap:9px}
+  .section:not(#control) .pr-row{grid-template-columns:minmax(0,1fr) 58px 64px;gap:8px;padding-inline:8px}
+  .section:not(#control) .pr-track{grid-column:1/-1;grid-row:2;height:18px}
+  .section:not(#control) .pr-axis{margin-left:0;font-size:13px}
+  .section:not(#control) .pr-delta{font-size:15px}
+  .section:not(#control) :is(.paper-figure figcaption,.video-figure figcaption,.figure-details summary){font-size:16px}
+  .section:not(#control) table,.section:not(#control) td{font-size:16px}
+  .section:not(#control) th{font-size:13px}
+  .section:not(#control) :is(th,td),.section:not(#control) .agent-table :is(th,td){padding-block:13px}
+  .section:not(#control) .bc-card{padding:18px}
+  .section:not(#control) .bc-mean{grid-template-columns:82px minmax(0,1fr) 68px;font-size:16px}
+  .section:not(#control) .bc-mean b{font-size:18px}
+  #memory .df-anim{padding:20px 16px}
+  #memory .df-row{grid-template-columns:28px repeat(2,minmax(0,1fr));gap:8px}
+  #memory :is(.df-clip,.df-goal,.df-task){padding:10px 8px}
+  #memory .df-op{font-size:16px}
+  #memory :is(.df-goal p,.df-task p){font-size:17px}
+}

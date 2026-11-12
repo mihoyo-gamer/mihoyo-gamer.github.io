@@ -1,0 +1,4 @@
+/* Larger blue section-title labels; other typography retains its scale. */
+.section .eyebrow{font-size:calc(var(--section-label) + 4px)!important}
+#pipeline .method-serving .eyebrow{font-size:16px!important}
+@media(max-width:520px){#pipeline .method-serving .eyebrow{font-size:15px!important}}

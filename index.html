@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080b13">
+  <meta name="description" content="Gamer: a generalist vision-language-action foundation model for long-horizon, real-time game agents. Multi-level data, online RL, and Streaming-vLLM.">
+  <meta property="og:title" content="Gamer: A Generalist Game Agent">
+  <meta property="og:description" content="Gamer combines cross-game pre-training, task-conditioned learning, and low-latency inference for long-horizon interaction.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/gamer-gameplay-atlas.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Gamer: A Generalist Game Agent</title>
+  <link rel="icon" href="assets/gamer-logo.svg?v=20261111-mascot" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="research.css?v=20261109-rollout-zoom">
+  <link rel="stylesheet" href="hero-film.css?v=20261107-music-credit">
+  <link rel="stylesheet" href="showcase.css?v=20261109-wide-demo">
+  <link rel="stylesheet" href="bench.css?v=20261110-all-inline-centered">
+  <link rel="stylesheet" href="data-factory.css?v=20261110-sft-counts-hd">
+  <link rel="stylesheet" href="motion.css?v=20261111-hero-icon-height">
+  <link rel="stylesheet" href="story-carousel.css?v=20261112-local-story-restored">
+  <link rel="stylesheet" href="gallery-carousel.css?v=20261111-inline-autoplay">
+  <script>try{const t=localStorage.getItem('gamer-theme');if(t)document.documentElement.dataset.theme=t;else if(matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.dataset.theme='dark';}catch(e){}</script>
+  <script src="motion.js" defer></script>
+  <script src="data.js?v=20261112-local-story-restored" defer></script>
+  <script src="local-media.js" defer></script>
+  <script src="recordings.js?v=20261111-five-types" defer></script>
+  <script src="paper-data.js?v=20261110-paper-latest-gpt61" defer></script>
+  <script src="showcase-data.js?v=20261110-language-review" defer></script>
+  <script src="bench-data.js?v=20261109-web-compact" defer></script>
+  <script src="video-playback.js?v=20261111-inline-autoplay" defer></script>
+  <script src="main.js?v=20261112-local-story-restored" defer></script>
+  <script src="research.js?v=20261111-rollout-video" defer></script>
+  <script src="showcase.js?v=20261110-inline-metrics" defer></script>
+  <script src="bench.js?v=20261111-inline-autoplay" defer></script>
+  <script src="data-factory.js?v=20261110-sft-counts-hd" defer></script>
+<link rel="stylesheet" href="page-structure.css?v=20261111-grid">
+<link rel="stylesheet" href="nav-affiliation.css?v=20261110-team-logo">
+<link rel="stylesheet" href="page-spacing.css?v=20261110-page-margins">
+  <link rel="stylesheet" href="section-labels.css?v=20261110-title-labels-v2">
+  <link rel="stylesheet" href="media-gallery.css?v=20261111-story-captions">
+</head>
+<body>
+<div id="read-progress" aria-hidden="true"></div>
+<a class="skip-link" href="#pipeline">Skip to content</a>
+<header class="nav"><div class="nav-inner">
+  <div class="nav-identity">
+    <a class="brand" href="#top">Gamer</a>
+    <div class="nav-affiliation"><img class="nav-mihoyo-logo" src="assets/mihoyo-logo.svg" alt="miHoYo" width="86" height="30"><span>Honkai AI R&amp;D Team</span></div>
+  </div>
+  <nav aria-label="Main navigation">
+    <a href="#pipeline">Overview</a>
+    <a href="#main-story">Story</a>
+    <a href="#minigames">Minigames</a>
+    <span class="nav-divider" aria-hidden="true"></span>
+    <a href="#control">CPT</a>
+    <a href="#memory">SFT</a>
+    <a href="#rl">RL</a>
+    <a href="#inference">Streaming-vLLM</a>
+    <span class="nav-divider" aria-hidden="true"></span>
+    <a href="#real-time">Results</a>
+    </nav>
+  <button id="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">◐</button>
+</div></header>
+<main id="top">
+<section class="hero" aria-labelledby="hero-title">
+    <div class="game-wall" aria-hidden="true">
+      <img src="assets/paper/genshin.png" alt=""><img src="assets/paper/minecraft.png" alt=""><img src="assets/paper/zzz.png" alt=""><img src="assets/paper/world-1.png" alt="">
+      <img src="assets/paper/hsr.png" alt=""><img src="assets/paper/doom-eternal.png" alt=""><img src="assets/paper/world-2.png" alt=""><img src="assets/paper/compass.png" alt="">
+      <img src="assets/paper/scapegoat.png" alt=""><img src="assets/paper/world-3.png" alt=""><img src="assets/paper/navigation.png" alt=""><img src="assets/paper/hexanexus.png" alt="">
+    </div>
+    <div class="hero-shade"></div>
+    <div class="wrap hero-content">
+      <h1 id="hero-title"><span class="hero-wordmark"><img class="hero-logo" src="assets/gamer-logo.svg?v=20261111-mascot" alt="" width="96" height="96"><span class="gradient-title">Gamer</span></span><span class="paper-title">A Generalist Vision-Language-Action Foundation Model<br class="desktop-break"> for Long-Horizon Real-Time Game Agents</span></h1>
+      <div class="hero-buttons">
+        <a class="pill pill-accent" href="assets/Gamer.pdf?v=20261112-paper-latest" target="_blank" rel="noopener"><span aria-hidden="true">▤</span> Technical Report</a>
+        <span class="pill unavailable" aria-label="Hugging Face paper page, coming soon"><span aria-hidden="true">🤗</span> Hugging Face Paper <small>soon</small></span>
+        <a class="pill pill-code" href="https://github.com/RainBowLuoCS/Gamer" target="_blank" rel="noopener" aria-label="Code on GitHub (opens in a new tab)"><svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg><span>Code</span><span class="pill-ext" aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-media overview-player hero-film" id="hero-media">
+        <video id="overview-video" src="videos/overview/gamer-film-2026-affiliations-v8-task-label.mp4?v=20261111-prompt-mascot" poster="assets/gamer-film-2026-affiliations-v8.jpg?v=20261111-prompt-mascot" muted loop playsinline controls preload="none" aria-label="Gamer project film: Star Rail gameplay, pre-training, instruction tuning, reinforcement learning, Streaming-vLLM serving, and game diversity"><track kind="chapters" src="videos/overview/gamer-project-film.vtt?v=20261106-mainstory-full" srclang="en" label="Film chapters"></video>
+      </div>
+    </div>
+  </section>
+
+<section class="section alt chapter-intro" id="pipeline" aria-labelledby="method-title"><div class="wrap">
+  <h2 id="method-title">Learning to play like a human</h2>
+  <p class="lead">Gamer maps screen observations to keyboard and mouse actions, powered by an optimized inference engine for real-time interaction.</p>
+  <div class="method-interface" aria-label="Screen pixels flow into Gamer, which outputs keyboard and mouse actions">
+    <article class="method-step method-observe">
+      <div class="method-symbol" aria-hidden="true"><svg viewbox="0 0 64 48" fill="none"><rect x="5" y="3" width="54" height="34" rx="5"></rect><path d="M23 45h18M32 37v8"></path><path class="screen-pixels" d="M15 13h8v8h-8zm12 8h8v8h-8zm12-8h8v8h-8z"></path></svg></div>
+      <h3>Screen observations</h3><p>Screenshots sampled at 5 Hz.</p>
+    </article>
+    <span class="method-connector" aria-hidden="true">→</span>
+    <article class="method-step method-policy">
+      <img src="assets/gamer-logo.svg?v=20261111-mascot" alt="" class="method-logo" width="64" height="48">
+      <h3>Gamer</h3><p>Conditioned on the task, observation history, and memory.</p>
+    </article>
+    <span class="method-connector" aria-hidden="true">→</span>
+    <article class="method-step method-act">
+      <div class="method-symbol" aria-hidden="true"><svg viewbox="0 0 72 48" fill="none"><rect x="2" y="15" width="45" height="28" rx="5"></rect><path d="M10 23h3m6 0h3m6 0h3m6 0h2M10 30h3m6 0h3m6 0h3m6 0h2M14 37h20"></path><rect x="54" y="3" width="16" height="32" rx="8"></rect><path d="M62 3v12m-8 0h16"></path></svg></div>
+      <h3>Keyboard and mouse actions</h3><p>Keyboard and mouse button states, mouse movement, and scrolling.</p>
+    </article>
+  </div>
+  <div class="method-training-heading"><h3>Training procedure</h3></div>
+  <div class="pipeline method-training">
+    <a class="s-cpt" href="#control"><span class="step-no">CPT</span><h3>Continued pre-training</h3><p>Continued pre-training learns transferable control skills from over 10K hours of gameplay with aligned screen observations and keyboard and mouse actions.</p><span class="method-link">CPT details <span aria-hidden="true">↗</span></span></a>
+    <a class="s-sft" href="#memory"><span class="step-no">SFT</span><h3>Instruction tuning</h3><p>Instruction tuning adds task supervision at the operation, subgoal, and task levels, with sparse reasoning and persistent memory.</p><span class="method-link">SFT details <span aria-hidden="true">↗</span></span></a>
+    <a class="s-rl" href="#rl"><span class="step-no">RL</span><h3>Online reinforcement learning</h3><p>TA-GRPO optimizes memory-linked trajectories using environment-verified rewards. Streaming-vLLM serves the real-time rollouts.</p><span class="method-link">RL details <span aria-hidden="true">↗</span></span></a>
+  </div>
+  <a class="method-serving" href="#inference"><div><span class="eyebrow">Real-time rollout and inference</span><h3>Streaming-vLLM</h3></div><p>Persistent KV caching and early action dispatch reduce inference latency for parallel RL rollouts and deployment.</p><span aria-hidden="true">↗</span></a>
+</div></section>
+
+<section class="section" id="main-story" aria-labelledby="main-story-title"><div class="wrap">
+<h2 id="main-story-title">Playing through Honkai: Star Rail’s main story</h2>
+<p class="lead section-intro">Watch Gamer navigate, interact, and complete quests in Honkai: Star Rail.</p>
+<div id="main-story-long" class="story-long-player"></div>
+<div class="story-long-caption"><strong>Honkai: Star Rail · Extended gameplay</strong><span id="main-story-long-duration"></span></div>
+<p id="main-story-long-status" role="status"></p>
+<div class="story-highlights">
+<p class="eyebrow">Chapter highlights</p>
+<div id="main-story-tabs" class="gallery-tabs" role="group" aria-label="Main story chapters"></div>
+<div id="main-story-grid" class="media-grid" aria-label="Main story gameplay videos"></div>
+</div>
+</div></section>
+
+<section class="section alt" id="minigames"><div class="wrap">
+<p class="eyebrow">Minigame recordings</p>
+<div class="showcase-heading"><div><h2>Puzzle solving in a unified action space</h2><p class="lead section-intro">Gamer tackles five puzzle types in Honkai: Star Rail using the same keyboard-and-mouse interface, combining logical and spatial reasoning with temporal planning and precise timing.</p></div></div>
+<div id="minigame-filters" class="gallery-tabs" role="group" aria-label="Minigame types"></div>
+<div id="minigame-grid" class="media-gallery"></div>
+</div></section>
+
+<section class="section" id="control"><div class="wrap narrow">
+<p class="eyebrow">Stage I CPT</p><h2>Cross-game control with a shared action format</h2>
+<p class="lead">CPT adapts a pretrained multimodal model to a unified keyboard-and-mouse interface. From screen observations sampled at 5 Hz, the model predicts a mouse displacement and six consecutive 33 ms key-state blocks per 200 ms interval, enabling 30 Hz control without a separate action head.</p>
+<div class="action-demo reveal">
+  <div class="action-left">
+    <h3>Policy output · one observation interval</h3>
+    <div class="action-think" id="action-think"></div>
+    <div class="packet" id="action-demo">
+      <div class="packet-mouse"><span>ΔP</span><b id="action-mouse">ΔP = (0, 0, 0)</b></div>
+      <div class="packet-block">∅</div><div class="packet-block">∅</div><div class="packet-block">∅</div><div class="packet-block">∅</div><div class="packet-block">∅</div><div class="packet-block">∅</div>
+    </div>
+    <div class="packet-scale"><span>K₁ · 0 ms</span><span>K₃</span><span>K₆ · 200 ms</span></div>
+    <pre class="action-serial" id="action-serial"></pre>
+    <p class="action-note" id="action-note"></p>
+    <div class="action-controls"><button type="button" id="action-prev">← Prev</button><button type="button" id="action-play">▶ Auto-play</button><button type="button" id="action-next">Next →</button><span id="action-step"></span></div>
+  </div>
+  <div class="action-right">
+    <h3>Executed on the client</h3>
+    <div class="keyboard" id="action-keyboard"></div>
+    <div class="mouse-pad"><div class="mouse-arrow" id="action-arrow"></div><div class="mouse-dot"></div><span class="mouse-label">Mouse displacement (ΔX, ΔY, scroll)</span></div>
+  </div>
+</div>
+<div class="cpt-tricks">
+  <div class="cpt-trick reveal"><h3>Repeat-aware loss decay</h3><p>Repeated key states encode how long actions are held but dominate token-level supervision. Weighting the n-th consecutive repetition by γ<sup>n−1</sup> places greater emphasis on action transitions while preserving hold duration.</p><div class="decay-chart-scroll" tabindex="0" role="region" aria-label="Action weights by step"><div class="decay-demo" id="decay-demo"></div></div><div class="decay-controls"><label for="decay-gamma">Decay γ</label><input type="range" id="decay-gamma" min="0.5" max="1" step="0.01" value="0.9" aria-describedby="decay-caption"><output id="decay-gamma-out" for="decay-gamma">0.90</output><span class="decay-share-wrap">transitions account for <b id="decay-share">0%</b> of the total loss weight</span></div><p class="decay-caption" id="decay-caption">Bars show loss weights for a 15-step action sequence. At γ = 1.0, repetitions have equal weight; lower values increase the relative weight of transitions.</p></div>
+  <div class="cpt-trick reveal"><h3>Random key remapping</h3><p>For each trajectory, a random one-to-one mapping consistently remaps rebindable keys in both the control specification and action labels, encouraging the model to learn key functions rather than key identities.</p><div class="remap"><div class="keys"><span class="key">A</span><span class="key">D</span><span class="key">W</span><span class="key">S</span></div><span class="arrow">⇄ σ</span><div class="keys"><span class="key rebound">D</span><span class="key rebound">A</span><span class="key">W</span><span class="key">S</span></div><p>"A/D: move left/right" becomes "D/A: move left/right" for this trajectory.</p></div><div class="remap-demo" id="remap-demo" aria-label="Animated example: the same movement under three random key bindings"><div class="rd-head"><span class="rd-traj" id="rd-traj">Trajectory 1</span><span class="rd-spec" id="rd-spec"></span><button type="button" class="replay-btn" id="rd-next">↻ New mapping</button></div><div class="rd-stage"><div class="rd-track"><span class="rd-goal" aria-hidden="true">★</span><span class="rd-agent" id="rd-agent" aria-hidden="true"></span></div><div class="rd-keys" id="rd-keys"></div></div><div class="rd-log"><div><span>Intent</span><b id="rd-intent">move left</b></div><div><span>Key pressed</span><b id="rd-key">A</b></div><div><span>Result</span><b id="rd-result">moves left ✓</b></div></div></div></div>
+</div>
+
+</div></section>
+
+<section class="section alt" id="memory"><div class="wrap narrow">
+<p class="eyebrow">Stage II SFT</p><h2>Sparse reasoning and cross-context memory</h2>
+<p class="lead">SFT teaches the policy to follow task instructions, reason explicitly at key decision points, and preserve task progress through memory summaries as older interactions leave the active context.</p>
+<div class="data-metrics"><div><strong>&gt;10K h</strong><span>Raw gameplay footage</span></div><div><strong>~1K h</strong><span>curated HSR footage</span></div><div><strong>~1.2M</strong><span>Think annotations</span></div><div><strong>~223K</strong><span>memory annotations</span></div><div><strong>~63K</strong><span>activity segments</span></div></div>
+<figure class="paper-figure "><a href="assets/paper-library/figure-04.webp" target="_blank" rel="noopener"><img src="assets/paper-library/figure-04.webp" width="1408" height="510" loading="lazy" alt="Sparse reasoning and cross-context memory"></a><figcaption><strong>Sparse reasoning and cross-context memory.</strong> Reasoning and memory updates use the same autoregressive output sequence as keyboard and mouse actions.</figcaption></figure>
+<div class="memory-notes"><article><b>Task-state memory</b><p>Memory retains completed objectives, failed attempts, important locations, resources, and remaining plans.</p></article><article><b>Sparse reasoning</b><p>The policy generates reasoning at route changes, target switches, new interaction prompts, and task transitions.</p></article><article><b>Continuous control</b><p>Memory updates remain part of the observation–reasoning–action sequence.</p></article></div>
+<div class="research-subsection" id="data"><p class="eyebrow">SFT data construction</p><h3>Multi-level task supervision</h3><p class="body-copy">Aligned videos and device events are annotated at the operation, subgoal, and task levels. Annotations include sparse reasoning at decision points and timestamped memory summaries.</p>
+<div class="df-anim reveal" id="df-anim" aria-label="Animated walkthrough of multi-level task supervision">
+  <div class="df-steps" role="group" aria-label="Annotation step"><button type="button" data-df-step="0" aria-pressed="true"><b>01</b>Segment</button><button type="button" data-df-step="1" aria-pressed="false"><b>02</b>L1 · Operations</button><button type="button" data-df-step="2" aria-pressed="false"><b>03</b>L2 · Subgoals</button><button type="button" data-df-step="3" aria-pressed="false"><b>04</b>L3 · Task</button><button type="button" class="df-play" id="df-play" aria-label="Play the walkthrough">▶ Play</button></div>
+  <div class="df-caption-row"><p class="df-caption" id="df-caption" aria-live="polite"></p><p class="df-count" id="df-count" aria-live="polite" hidden></p></div>
+  <div class="df-stage">
+    <div class="df-source"><span class="df-label">Aligned recording · video + actions</span><img src="assets/data-factory/input.jpg" alt="Currency Wars menu, the start of the aligned recording" width="251" height="140"><div class="df-timeline" id="df-timeline"><i class="df-playhead" id="df-playhead"></i></div></div>
+    <div class="df-rows">
+      <div class="df-row df-l1" id="df-l1"></div>
+      <div class="df-row df-l2" id="df-l2"></div>
+      <div class="df-row df-l3" id="df-l3"></div>
+    </div>
+  </div>
+</div>
+<details class="figure-details" id="data-details" open><summary>More details for data curation, sources, and training composition <span class="disclosure-indicator" aria-hidden="true"><svg viewBox="0 0 16 10" focusable="false"><path d="M1 1h14L8 9z" fill="currentColor"/></svg></span></summary><figure class="paper-figure "><a href="assets/paper-library/figure-08-sankey.webp" target="_blank" rel="noopener"><img src="assets/paper-library/figure-08-sankey.webp" width="4493" height="1893" loading="lazy" alt="Multi-stage data curation"></a><figcaption class="data-figure-caption"><strong>Multi-stage data curation</strong></figcaption></figure><div class="paired-paper-tables" id="data-table-previews"></div></details></div>
+</div></section>
+
+<section class="section" id="rl"><div class="wrap narrow">
+<p class="eyebrow">Stage III RL</p><h2>Online policy optimization with TA-GRPO</h2>
+<p class="lead">Temporal-Aware GRPO optimizes memory-linked rollout segments using environment-verified rewards, without a value critic or learned reward model. Streaming-vLLM serves parallel rollouts under the real-time execution protocol.</p>
+<figure class="video-figure rollout-progress-video"><video id="rollout-progress-video" controls muted loop playsinline preload="none" poster="assets/rl-rollout-mean.jpg?v=20261111-rollout-video" aria-label="Mean reward across eight navigation tasks: real-time rollout versus low-FPS control"><source src="videos/rl-rollout-mean.mp4?v=20261111-rollout-video" type="video/mp4"></video></figure>
+<div class="gallery-controls"><span class="control-label">Rollout case</span><div class="segmented" role="group" aria-label="RL rollout case"><button type="button" data-rollout="training" aria-pressed="true">Reach Pom-Pom · training</button><button type="button" data-rollout="development" aria-pressed="false">Reach March 7th · testing</button></div></div>
+<figure class="paper-figure rollout-figure">
+  <div class="rollout-figure-toolbar">
+    <div class="rollout-zoom-controls" role="group" aria-label="Rollout figure zoom">
+      <button type="button" data-rollout-zoom="fit" aria-controls="rollout-image-view" aria-pressed="true">Fit to View</button>
+      <button type="button" data-rollout-zoom="0.5" aria-controls="rollout-image-view" aria-pressed="false">Zoom In</button>
+    </div>
+    <a id="rollout-image-link" href="assets/paper-library/rl-train-rollout.pdf" target="_blank" rel="noopener">Open original PDF ↗</a>
+  </div>
+  <div id="rollout-image-view" class="rollout-image-view" role="region" aria-label="Rollout figure" tabindex="0">
+    <img id="rollout-image" src="assets/paper-library/rl-train-rollout-detail.webp" width="8400" height="4536" loading="lazy" alt="Representative training-task rollouts across online-learning checkpoints">
+  </div>
+  <figcaption id="rollout-caption"></figcaption>
+</figure>
+<div class="research-subsection"><p class="eyebrow">Real-time feedback during training</p><h3>Faster rollouts, better learning</h3><p class="body-copy">Across all eight navigation tasks, real-time rollouts achieve higher final rewards than the 0.6-FPS baseline under the same training-step budget.</p><figure class="video-figure"><video id="rl-video" controls muted loop playsinline preload="none" poster="assets/rl-reward-poster.jpg?v=20261110-reward-new" aria-label="RL reward comparison: real-time rollout versus low-FPS control"><source src="videos/rl_reward.mp4?v=20261110-reward-new" type="video/mp4"></video></figure></div>
+<div class="research-subsection" id="minigame-results"><p class="eyebrow">Generalization across puzzle types</p><h3>Seven puzzle types. Forty held-out tasks.</h3><p class="body-copy">Gamer-RL achieves a 49.7% macro-average success rate across seven puzzle types, improving on Gamer-SFT’s 39.2% by 10.5 percentage points. Both models successfully solve tasks in every type, while the strongest general-purpose baseline reaches 17.1%. The macro-average weights all seven puzzle types equally.</p><div class="result-callouts"><div><strong>49.7%</strong><span>Gamer-RL macro-average</span></div><div><strong>17.1%</strong><span>GPT-6.1-Sol macro-average</span></div><div><strong>7 / 7</strong><span>types with non-zero success</span></div></div>
+<div class="comparison-toolbar"><h3 id="minigame-result-heading">Seven-type macro-average</h3><label>Metric <select id="minigame-result-select" aria-label="Minigame result metric"></select></label></div><div id="minigame-result-chart" class="research-chart" aria-live="polite"></div>
+<details class="figure-details" open><summary>All minigame scores <span class="disclosure-indicator" aria-hidden="true"><svg viewBox="0 0 16 10" focusable="false"><path d="M1 1h14L8 9z" fill="currentColor"/></svg></span></summary><div id="minigame-result-table" class="table-scroll detail-table"></div></details></div>
+</div></section>
+
+<section class="section alt" id="inference"><div class="wrap narrow"><p class="eyebrow">Real-time training and deployment</p><h2>Low-latency inference with Streaming-vLLM</h2><p class="lead">Streaming-vLLM reuses each client’s KV cache across turns, accelerates inference with architecture-specific kernels, and dispatches verified action blocks before decoding finishes. Together, these optimizations reduce end-to-end request latency from 1,306 ms to 65.12 ms on the H200 MoE workload.</p>
+<div class="engine-story"><div class="engine-summary"><span class="finding-label">CUMULATIVE INFERENCE OPTIMIZATIONS</span><strong class="engine-speedup">20.1×</strong><p class="latency-pair">1,306 <span>→</span> <b>65.12 ms</b></p><p>End-to-end request latency</p><div class="hardware">NVIDIA H200 · Qwen3.5-35B-A3B MoE · 4.62 → 92.16 Hz theoretical control rate</div></div><div class="engine-table"><div class="engine-table-head"><button type="button" class="replay-btn" id="optimization-replay">↻ Replay</button></div><div id="optimization-chart"></div></div></div>
+<details class="figure-details" open><summary>Component latency, step rate, and control capacity <span class="disclosure-indicator" aria-hidden="true"><svg viewBox="0 0 16 10" focusable="false"><path d="M1 1h14L8 9z" fill="currentColor"/></svg></span></summary><div id="optimization-table" class="table-scroll detail-table"></div></details>
+<div class="research-subsection"><h3>Running on different backbones and hardwares</h3><div class="gallery-controls"><span class="control-label">Backbone</span><div id="latency-tabs" class="segmented" role="group" aria-label="Inference backbone"><button type="button" data-model="dense" aria-pressed="true">Qwen3-VL-8B · Dense</button><button type="button" data-model="moe" aria-pressed="false">Qwen3.5-35B-A3B · MoE</button></div></div><div id="latency-chart" class="latency-panels" aria-live="polite"></div></div>
+
+<div class="bench-compare reveal" id="bench-compare"><p class="eyebrow">Time-paused and real-time evaluation</p><h3>How real-time execution affects performance</h3><p class="body-copy">Time-paused (TP) evaluation freezes the environment during inference, while real-time (RT) evaluation keeps it running. Paired recordings show the same policy performing the same task under both protocols, covering eight tasks across four benchmarks. Clips illustrate representative runs; bars show mean results across runs, with MCU scores reported as successful attempts out of five.</p><div class="gallery-controls"><span class="control-label">Benchmark</span><div id="bench-tabs" class="segmented wrap-tabs" role="group" aria-label="Benchmark recordings"></div></div><div id="bench-grid" class="bench-grid"></div></div>
+</div></section>
+
+<section class="section chapter-intro" id="real-time"><div class="wrap narrow">
+<p class="eyebrow">General benchmark results</p><h2>Generalization across four game benchmarks</h2>
+<p class="lead">We evaluate our policies on MCU, ViZDoom, OmniGameArena, and GameWorld under both time-paused and real-time protocols. Moving to real-time evaluation lowers average scores by 17–35 percentage points for the evaluated general-purpose models, while Gamer-35B-A3B-CPT improves by 3.4 percentage points.</p>
+<div class="pause-run reveal">
+  <div class="pr-head"><h3 id="pause-run-heading">Average · real-time (RT)</h3><button type="button" class="pr-switch" id="pause-run-toggle" role="switch" aria-checked="true" data-mode="running"><span class="lab paused">⏸ Time-paused (TP)</span><span class="knob" aria-hidden="true"></span><span class="lab running">▶ Real-time (RT)</span></button></div>
+  <p class="pr-summary" id="pause-run-summary"></p>
+  <div class="gallery-controls" style="margin:0 0 14px"><span class="control-label">Benchmark</span><div id="pause-run-bench" class="segmented wrap-tabs" role="group" aria-label="Benchmark"></div></div>
+  <div class="pr-chart" id="pause-run-chart" aria-live="polite"></div>
+  <div class="pr-axis"><span>0</span><span>Score (%) · higher is better · Δ = RT − TP</span><span>100</span></div>
+</div>
+<details class="figure-details" open><summary>All benchmark scores: real-time and time-paused <span class="disclosure-indicator" aria-hidden="true"><svg viewBox="0 0 16 10" focusable="false"><path d="M1 1h14L8 9z" fill="currentColor"/></svg></span></summary><div class="gallery-controls"><span class="control-label">Benchmark</span><div id="benchmark-tabs" class="segmented wrap-tabs" role="group" aria-label="Real-time benchmark"></div></div><div class="comparison-panel"><div class="chart-heading"><h3 id="benchmark-heading">Average score</h3><div class="chart-legend"><span><i class="legend-solid"></i>Real-time</span><span><i class="legend-ghost"></i>Time-paused</span></div></div><div id="realtime-chart" aria-live="polite"></div><div class="chart-axis"><span>0</span><span>Score (%) · higher is better</span><span>100</span></div></div><div class="table-scroll detail-table" id="realtime-table"></div></details>
+
+</div></section>
+
+<section class="section" id="responsibility" aria-labelledby="responsibility-title"><div class="wrap">
+<h2 id="responsibility-title">Responsible Research and Use</h2>
+<div class="responsibility-copy">
+<p><strong>Gamer is a research project</strong> exploring generalist agents in interactive environments. We share experimental methods, results, and gameplay demonstrations for academic communication and evaluation. Potential applications include game testing, accessibility, and human–AI interaction research.</p>
+<p>We advocate responsible research and use that respect privacy, intellectual property, applicable laws, and platform rules. We do not endorse using Gamer for cheating, unauthorized access, exploiting security vulnerabilities, or activities that harm users or undermine fair play.</p>
+<p>Our results are limited to the evaluated research settings. Any use beyond these settings requires appropriate authorization, independent assessment of safety and reliability, and human oversight suited to the application.</p>
+</div>
+</div></section>
+<section class="section alt resources" id="citation" aria-labelledby="citation-title"><div class="wrap narrow">
+<h2 id="citation-title">Citation</h2>
+<div class="bibtex-box"><button type="button" id="copy-bibtex">Copy BibTeX</button><pre id="bibtex">@misc{gamer,
+  title = {Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon, Real-Time Game Agents},
+  author = {Luo, Run and Zhang, Kuan and Deng, Qi and Chen, Yukun and Yang, Zhihao and Zhang, Yufei and Hu, Renrong and Zhang, Yi and Zheng, Yinhe and Xia, Xiaobo and Jiang, Dawei and Ren, Shaoqing},
+  year = {2026}
+}</pre></div>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap"><a class="brand" href="#top">Gamer</a><p>miHoYo Honkai AI R&amp;D Team</p></div></footer>
+<dialog id="demo-dialog" class="wide-demo-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><span id="dialog-category"></span><button id="close-dialog" aria-label="Close demo">×</button></div><div id="dialog-media" class="dialog-media"></div><div class="dialog-playlist" id="dialog-playlist" hidden><button type="button" id="previous-demo">← Previous</button><span id="dialog-position"></span><button type="button" id="next-demo">Next →</button></div><div class="dialog-copy"><h2 id="dialog-title"></h2><p id="dialog-description"></p><p id="dialog-status" role="status"></p></div></dialog>
+<noscript><p class="noscript">JavaScript is needed for the interactive gallery. The research sections and paper remain available.</p></noscript>
+</body></html>

@@ -1,0 +1,14 @@
+/* One centered content width, with responsive space along both sides. */
+:root{--page-gutter:clamp(28px,6vw,112px);--page-content-max:1600px}
+.section>.wrap,.footer>.wrap,.hero>.wrap,header.nav .nav-inner{
+  width:min(var(--page-content-max),calc(100% - var(--page-gutter) * 2));
+  max-width:var(--page-content-max);
+  margin-inline:auto;
+  padding-inline:0;
+}
+.hero .hero-media.hero-film{
+  width:100%;max-width:100%;left:auto;transform:none;margin-inline:auto;
+}
+@media(max-width:800px){:root{--page-gutter:clamp(24px,4vw,32px)}}
+@media(max-width:520px){:root{--page-gutter:24px}}
+@media(max-width:360px){:root{--page-gutter:20px}}

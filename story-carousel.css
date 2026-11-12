@@ -1,0 +1,42 @@
+/* Long gameplay stands on its own; chapter highlights use native scroll snapping. */
+#main-story .story-long-player{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#080b13;box-shadow:0 12px 36px #111b3210}
+#main-story .story-long-player :is(video,img){display:block;width:100%;aspect-ratio:16/9;max-height:80vh;object-fit:contain;background:#080b13}
+#main-story .story-long-caption{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:20px 4px 0;color:var(--secondary);font-size:17px}
+#main-story .story-long-caption strong{font-weight:600;color:var(--ink)}
+#main-story .story-long-caption span{font-variant-numeric:tabular-nums}
+#main-story #main-story-long-status:empty{display:none}
+#main-story #main-story-long-status{font-size:15px;color:var(--secondary);margin:14px 4px 0}
+#main-story .story-highlights{margin-top:58px;padding-top:12px}
+#main-story .story-highlights>.eyebrow{margin-bottom:0}
+#main-story .story-tabs.segmented button{border-radius:10px}
+#main-story #main-story-tabs .seg-ind{border-radius:10px}
+#main-story .story-gallery-heading{align-items:center;flex-direction:row;margin-bottom:22px}
+#main-story .story-arrow-group{display:flex;gap:10px;flex-shrink:0}
+#main-story .story-arrow{display:grid;place-items:center;width:50px;height:50px;border:1px solid var(--line);border-radius:50%;background:var(--surface);color:var(--ink);font:400 26px/1 inherit;transition:background .2s,color .2s,opacity .2s}
+#main-story .story-arrow:hover:not(:disabled){background:var(--blue);border-color:var(--blue);color:white}
+#main-story .story-arrow:disabled{opacity:.28;cursor:default}
+#main-story .story-arrow svg{width:22px;height:22px}
+#main-story .story-carousel{--slide:78%;--gap:24px;position:relative;display:flex;gap:var(--gap);overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;padding:6px 0 18px;isolation:isolate}
+#main-story .story-carousel::-webkit-scrollbar{display:none}
+#main-story .story-carousel.is-dragging{scroll-snap-type:none;user-select:none;cursor:grabbing}
+#main-story .story-carousel.is-dragging *{cursor:grabbing}
+#main-story .story-carousel::after{content:'';flex:0 0 max(0px,calc(100% - var(--slide) - var(--gap)))}
+#main-story .story-carousel>.video-card{flex:0 0 var(--slide);min-width:0;scroll-snap-align:start;scroll-snap-stop:always;margin:0;transform:none;box-shadow:0 5px 16px #14203808}
+#main-story .story-carousel .video-poster{aspect-ratio:16/9}
+#main-story .story-carousel .video-poster img{object-fit:cover}
+#main-story .story-carousel .video-meta{padding:20px 24px}
+#main-story .story-carousel .video-meta h3{display:none}
+#main-story .story-carousel .video-meta p{margin:0 0 8px;font-size:17px}
+#main-story .story-carousel .type-tag{font-size:15px}
+#main-story .story-carousel .play-icon{width:66px;height:66px;font-size:32px}
+#main-story .story-carousel .clip-duration{font-size:15px;padding:6px 9px;bottom:14px;right:14px}
+#main-story .story-dots{display:flex;justify-content:center;gap:5px;margin-top:10px}
+#main-story .story-dot{position:relative;width:32px;height:32px;border:0;padding:0;background:transparent;border-radius:50%}
+#main-story .story-dot::after{content:'';position:absolute;top:12px;left:12px;width:8px;height:8px;border-radius:8px;background:var(--muted);opacity:.4;transition:width .2s,left .2s,background .2s}
+#main-story .story-dot[aria-pressed=true]::after{width:24px;left:4px;background:var(--blue);opacity:1}
+#main-story :is(.story-arrow,.story-dot,.story-carousel):focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.story-sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:900px){#main-story .story-carousel{--slide:88%;--gap:16px}#main-story .story-long-caption{font-size:15px}#main-story .story-highlights{margin-top:40px}}
+@media(max-width:520px){#main-story .story-carousel{--slide:94%;--gap:12px}#main-story .story-long-player{border-radius:12px}#main-story .story-gallery-heading h3{font-size:21px}#main-story .story-arrow{width:40px;height:40px}#main-story .story-arrow-group{gap:7px}#main-story .story-carousel .video-meta{padding:15px 16px}#main-story .story-carousel .video-meta p{font-size:14px}#main-story .story-carousel .type-tag{font-size:12px}#main-story .story-carousel .play-icon{width:46px;height:46px;font-size:24px}#main-story .story-carousel .clip-duration{font-size:12px}#main-story .story-long-caption{gap:10px;font-size:13px;padding-top:14px}}
+@media(prefers-reduced-motion:reduce){#main-story .story-carousel{scroll-behavior:auto}#main-story .story-dot::after{transition:none}}
+@media(max-width:520px){#main-story #main-story-tabs button{padding:12px 8px;justify-content:flex-start;gap:8px}#main-story #main-story-tabs button span{font-size:15px;line-height:1.35}#main-story #main-story-tabs button small{font-size:9px;letter-spacing:.3px}}

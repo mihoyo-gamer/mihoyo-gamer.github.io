@@ -1,0 +1,96 @@
+/* Method-first reading order: overview, gameplay, training, serving, results. */
+#pipeline #method-title{max-width:none;text-wrap:wrap;text-align:center}
+.section>.wrap>h2,.section .showcase-heading h2{max-width:none;text-align:center}
+.section>.wrap>.eyebrow{text-align:center}
+:is(#main-story,#minigames) .gallery-window>.gallery-arrow{top:calc(50% - 6px)}
+.section .lead,.section.chapter-intro .lead,.section .section-intro,.section .body-copy,.section .bench-compare>.body-copy{max-width:none;white-space:normal;text-wrap:wrap}
+#responsibility{text-align:left}
+#responsibility .responsibility-copy{max-width:none;margin:32px 0 0;color:var(--secondary);font-size:20px;line-height:1.85}
+#responsibility .responsibility-copy p{margin:0 0 20px}
+#responsibility .responsibility-copy p:last-child{margin-bottom:0}
+#responsibility .responsibility-copy strong{font-weight:650;color:var(--ink)}
+@media(max-width:800px){#responsibility .responsibility-copy{font-size:18px;margin-top:26px}}
+@media(max-width:520px){#responsibility .responsibility-copy{font-size:17px;line-height:1.8}}
+#citation.section .bibtex-box{padding:76px 28px 28px;font-size:16px}
+#citation .bibtex-box pre{white-space:pre-wrap;overflow-wrap:anywhere}
+#citation #copy-bibtex{top:16px;right:16px;min-height:44px}
+@media(max-width:520px){#citation.section .bibtex-box{padding:76px 18px 22px;font-size:14px}}
+#pipeline .method-interface{display:grid;grid-template-columns:minmax(0,1fr) 52px minmax(0,1fr) 52px minmax(0,1fr);align-items:stretch;gap:12px;margin-top:48px}
+#pipeline .method-step{min-width:0;padding:34px 28px;border:1px solid var(--line);border-radius:20px;background:var(--surface)}
+#pipeline .method-policy{background:linear-gradient(145deg,var(--surface),var(--ours-soft));border-color:color-mix(in srgb,var(--blue) 24%,var(--line))}
+#pipeline .method-symbol,#pipeline .method-logo{width:72px;height:52px;margin:0 0 24px;object-fit:contain;object-position:left}
+#pipeline .method-symbol svg{width:100%;height:100%;stroke:var(--blue);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#pipeline .screen-pixels{fill:var(--blue);stroke:none;opacity:.5}
+#pipeline .method-step h3{font-size:28px;line-height:1.35;margin:0 0 12px}
+#pipeline .method-step p{font-size:20px;line-height:1.7;color:var(--secondary);margin:0}
+#pipeline .method-connector{align-self:center;text-align:center;color:var(--blue);font-size:32px;font-weight:400}
+#pipeline .method-training-heading{margin-top:56px}
+#pipeline .method-training-heading h3{margin:0 0 10px;font-size:32px}
+#pipeline .method-training-heading p{margin:0}
+#pipeline .method-training{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:28px;border-radius:18px}
+#pipeline.section .method-training>a{min-height:0;padding:32px;gap:0}
+#pipeline .method-training h3{font-size:27px;line-height:1.4;margin:14px 0}
+#pipeline .method-training p{font-size:20px;line-height:1.7;margin:0 0 28px}
+#pipeline .method-link{margin-top:auto;font-size:17px;font-weight:600;color:var(--stage-color)}
+#pipeline .method-link span{margin-left:8px}
+#pipeline .method-serving{display:grid;grid-template-columns:300px 1fr 28px;align-items:center;gap:32px;padding:28px 32px;margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:18px;color:var(--ink);text-decoration:none;transition:border-color .2s}
+#pipeline .method-serving:hover{border-color:var(--blue)}
+#pipeline .method-serving .eyebrow{display:block;font-size:12px;letter-spacing:1px;margin:0 0 9px}
+#pipeline .method-serving h3{font-size:26px;line-height:1.3;margin:0}
+#pipeline .method-serving p{font-size:19px;line-height:1.7;color:var(--secondary);margin:0}
+#pipeline .method-serving>span{font-size:28px;color:var(--blue)}
+#inference #bench-compare{margin-top:76px;padding-top:56px;border-top:1px solid var(--line)}
+@media(max-width:1000px){
+  #pipeline .method-interface{grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr);gap:8px}
+  #pipeline .method-step{padding:26px 20px}
+  #pipeline .method-step h3{font-size:24px}
+  #pipeline .method-step p,#pipeline .method-training p{font-size:18px}
+  #pipeline.section .method-training>a{padding:28px 22px}
+  #pipeline .method-training h3{font-size:23px}
+  #pipeline .method-serving{grid-template-columns:240px 1fr 24px;gap:22px}
+}
+@media(max-width:800px){
+  #pipeline .method-interface{grid-template-columns:1fr;gap:10px;margin-top:32px}
+  #pipeline .method-step{display:grid;grid-template-columns:68px 1fr;column-gap:22px;padding:24px}
+  #pipeline .method-symbol,#pipeline .method-logo{grid-row:1/3;width:62px;margin:0;align-self:center}
+  #pipeline .method-step h3{margin-bottom:6px}
+  #pipeline .method-connector{font-size:26px;line-height:1;transform:rotate(90deg)}
+  #pipeline .method-training{grid-template-columns:1fr}
+  #pipeline.section .method-training>a{border-left:0!important;border-top:1px solid var(--line)}
+  #pipeline.section .method-training>a:first-child{border-top:0}
+  #pipeline .method-training p{margin-bottom:20px}
+  #pipeline .method-serving{grid-template-columns:1fr 24px;padding:26px 22px;gap:18px}
+  #pipeline .method-serving>div{grid-column:1}
+  #pipeline .method-serving p{grid-column:1;font-size:18px}
+  #pipeline .method-serving>span{grid-column:2;grid-row:1/3}
+}
+@media(max-width:520px){
+  #pipeline .method-step{grid-template-columns:48px 1fr;gap:0 18px;padding:22px 18px;border-radius:16px}
+  #pipeline .method-symbol,#pipeline .method-logo{width:46px;height:40px}
+  #pipeline .method-step h3{font-size:22px}
+  #pipeline .method-step p,#pipeline .method-training p{font-size:17px}
+  #pipeline .method-training-heading{margin-top:40px}
+  #pipeline .method-training-heading h3{font-size:27px}
+  #pipeline.section .method-training>a{padding:26px 22px}
+  #pipeline .method-serving .eyebrow{font-size:11px}
+  #inference #bench-compare{margin-top:48px;padding-top:36px}
+}
+
+/* Chapter labels and captions for the data-construction figures. */
+#main-story .story-highlights>.eyebrow{text-align:center}
+#data .data-figure-caption,#data-table-previews figcaption{text-align:center;font-weight:700;color:var(--ink)}
+
+#inference .engine-table-head{justify-content:flex-end}
+
+
+/* Raw and curated footage, reasoning, memory and activity annotations. */
+#memory .data-metrics{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:1100px){
+  #memory .data-metrics{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}
+  #memory .data-metrics>div:nth-child(odd){border-left:0;padding-left:0}
+}
+
+/* Disclosure panels start open; triangles indicate the available toggle direction. */
+.figure-details>summary>.disclosure-indicator{display:grid;place-items:center;flex:0 0 20px;width:20px;height:20px;transform:rotate(0deg)}
+.figure-details>summary>.disclosure-indicator svg{display:block;width:14px;height:10px}
+.figure-details[open]>summary>.disclosure-indicator{transform:rotate(180deg)}
