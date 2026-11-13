@@ -131,7 +131,7 @@ window.GAMER.recordings = [
     "ability": "Planning",
     "skill": "Temporal planning",
     "duration": 57.47,
-    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/scapegoat-08.mp4?v=20261111-prompt-hidden",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/minigames/scapegoat-08.mp4?v=20261113-held-key-fix",
     "poster": "assets/recordings/scapegoat-08.jpg?v=20261111-prompt-hidden",
     "description": "A gameplay recording of Golden Scapegoat. The recording includes the original task, Think excerpts, and executed keyboard–mouse actions."
   },
