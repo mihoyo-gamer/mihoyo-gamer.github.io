@@ -14,3 +14,8 @@
 
 .film-music-credit{margin:0;padding:10px 16px;border-top:1px solid #ffffff18;background:#0c1425;color:#a8b8d5;font-size:11px;line-height:1.6;text-align:center}
 .film-music-credit a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+
+/* Model release scope, between the resource links and overview video. */
+.hero .hero-release-note{max-width:960px;margin:18px auto 0;color:#d4dbe8;font-size:14px;font-weight:400;line-height:1.65}
+.hero .hero-release-note + .hero-media.hero-film{margin-top:24px}
+@media(max-width:600px){.hero .hero-release-note{margin-top:16px;font-size:12px;line-height:1.7}.hero .hero-release-note + .hero-media.hero-film{margin-top:22px}}
