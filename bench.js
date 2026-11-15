@@ -28,7 +28,6 @@
     const tag = el('span', 'bc-tag', mode === 'rt' ? '▶ RT · real-time' : '⏸ TP · time-paused');
     const frame = el('div', 'bc-frame');
     const video = el('video'); video.muted = true; video.loop = true; video.playsInline = true; video.preload = 'none';
-    if (bench.id === 'mcu') video.defaultPlaybackRate = video.playbackRate = 1.5;
     video.dataset.src = run.src; video.setAttribute('aria-label', (mode === 'rt' ? 'Real-time' : 'Time-paused') + ' run');
     if (M.reduced) video.controls = true;
     video.addEventListener('click', () => { if (video.paused) video.play().catch(() => {}); else video.pause(); });

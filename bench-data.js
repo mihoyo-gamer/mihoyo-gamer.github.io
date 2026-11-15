@@ -10,20 +10,20 @@ window.GAMER.benchVideos = {
    "game": "Kill Slime",
    "model": "Gamer-8B-CPT",
    "rt": {
-    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/mcu-kill-slime-rt.mp4?v=20261109-web-compact",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/mcu-kill-slime-rt.mp4?v=20261115-mcu-baked-1-5x",
     "success": true,
     "mean": 0.8,
     "wins": 4,
     "runs": 5,
-    "duration": 71.45
+    "duration": 47.633333
    },
    "tp": {
-    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/mcu-kill-slime-tp.mp4?v=20261109-web-compact",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/mcu-kill-slime-tp.mp4?v=20261115-mcu-baked-1-5x",
     "success": false,
     "mean": 0.6,
     "wins": 3,
     "runs": 5,
-    "duration": 30.05
+    "duration": 20.033333
    },
    "crop": [
     0,
@@ -36,20 +36,20 @@ window.GAMER.benchVideos = {
    "game": "Craft Paper",
    "model": "Gamer-35B-A3B-CPT",
    "rt": {
-    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/mcu-craft-paper-rt.mp4?v=20261109-redacted",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/mcu-craft-paper-rt.mp4?v=20261115-mcu-baked-1-5x",
     "success": true,
     "mean": 0.8,
     "wins": 4,
     "runs": 5,
-    "duration": 30.2
+    "duration": 20.133333
    },
    "tp": {
-    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/mcu-craft-paper-tp.mp4?v=20261109-redacted",
+    "src": "https://pub-8f40caf469454640ab053ec876fb1f49.r2.dev/videos/bench/mcu-craft-paper-tp.mp4?v=20261115-mcu-baked-1-5x",
     "success": false,
     "mean": 0.4,
     "wins": 2,
     "runs": 5,
-    "duration": 30.85
+    "duration": 20.566667
    },
    "crop": [
     0,
