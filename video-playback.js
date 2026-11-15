@@ -1,4 +1,4 @@
-/* Viewport playback: the project film starts with sound; other clips start muted. */
+/* Viewport autoplay: try sound for the project film, then fall back to muted playback. */
 (() => {
   'use strict';
   const states = new Map();
@@ -34,8 +34,11 @@
     if (video.dataset.src && !video.getAttribute('src')) video.src = video.dataset.src;
     state.attempted = true;
     video.play().catch(error => {
-      if (error.name === 'NotAllowedError' && state.soundPrompt && visible(video,state) && video.paused) {
-        state.soundPrompt.hidden = false;
+      if (error.name === 'NotAllowedError' && !video.muted && visible(video,state)) {
+        // Audible autoplay may be blocked on a first visit. Keep the film moving.
+        video.muted = true;
+        state.userPaused = false;
+        video.play().catch(()=>{});
       }
       // Native controls remain usable for media errors and explicit user playback.
     });
@@ -65,21 +68,13 @@
     video.autoplay = false; video.preload = 'none';
     const startsWithSound = video.dataset.audioDefault === 'on';
     video.muted = video.defaultMuted = !startsWithSound; video.playsInline = true;
-    const soundPrompt = startsWithSound ? document.getElementById('overview-play-with-sound') : null;
-    const state = {target:video.closest('.bc-pair') || video, soundPrompt, active:false, attempted:false, userPaused:false, automaticPause:false};
+    const state = {target:video.closest('.bc-pair') || video, active:false, attempted:false, userPaused:false, automaticPause:false};
     states.set(video,state); observer.observe(state.target);
-    soundPrompt?.addEventListener('click',()=>{
-      video.muted = false;
-      if (!video.volume) video.volume = 1;
-      state.userPaused = false;
-      play(video,state);
-    });
     video.addEventListener('pause',()=>{
       if (state.automaticPause) { state.automaticPause = false; return; }
       if (state.active && !video.ended) state.userPaused = true;
     });
     video.addEventListener('play',()=>{
-      if (state.soundPrompt) state.soundPrompt.hidden = true;
       state.userPaused = false;
       // Cancel a pending play when a tab/slide was hidden while its media loaded.
       if (!visible(video,state)) pause(video,state);

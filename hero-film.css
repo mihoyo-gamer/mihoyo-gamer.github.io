@@ -16,8 +16,3 @@
 .film-music-credit a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 
 /* Shown only when the browser requires a click before playing with sound. */
-.hero-film .film-sound-play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);display:inline-flex;align-items:center;justify-content:center;gap:9px;max-width:calc(100% - 32px);padding:14px 22px;border:1px solid #ffffff55;border-radius:999px;background:#4056dbeF;color:#fff;font:600 16px/1.25 Inter,"Segoe UI",Arial,sans-serif;box-shadow:0 8px 28px #0005;cursor:pointer;transition:background .2s,box-shadow .2s}
-.hero-film .film-sound-play[hidden]{display:none}
-.hero-film .film-sound-play:hover{background:#3045c9;box-shadow:0 10px 32px #0007}
-.hero-film .film-sound-play:focus-visible{outline:3px solid #fff;outline-offset:4px}
-@media(max-width:600px){.hero-film .film-sound-play{padding:11px 16px;font-size:14px}}
