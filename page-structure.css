@@ -94,3 +94,7 @@
 .figure-details>summary>.disclosure-indicator{display:grid;place-items:center;flex:0 0 20px;width:20px;height:20px;transform:rotate(0deg)}
 .figure-details>summary>.disclosure-indicator svg{display:block;width:14px;height:10px}
 .figure-details[open]>summary>.disclosure-indicator{transform:rotate(180deg)}
+
+/* Model release scope immediately above the citation heading. */
+#citation .model-release-note{max-width:960px;margin:0 auto 28px;color:var(--secondary);font-size:14px;font-weight:400;line-height:1.75;text-align:center}
+@media(max-width:600px){#citation .model-release-note{margin-bottom:24px;font-size:12px;line-height:1.7}}
